@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Operator</title>
+</head>
+
+<body>
+    <h1>Destructuring Assignment-Rest Operator</h1>
+    <h3>寫一個加總的函示範例</h3>
+
+    <script>
+        //args(argument) 的中文含義即為參數
+        function sum(n1, n2, ...args) {
+            console.log(n1, n2, args); //args 包含未指定的剩餘參數成為一個新陣列 [5, 6, 8, 4, 8, 5]
+            let result = n1 + n2;
+            for (let i = 0; i < args.length; i++) {
+
+                result += args[i];
+            }
+            console.log(result);
+        }
+        sum(2, 3);
+        sum(3, 2, 5, 6, 8, 4, 8, 5);  //41
+    </script>
+</body>
+
+</html>

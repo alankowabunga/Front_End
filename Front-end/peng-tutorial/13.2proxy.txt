@@ -1,0 +1,34 @@
+準備一個目標物件為範例:
+
+*使用 json 分開紀錄名子和姓式的目標物件
+let profile={
+    firstName:"YU JEN",
+    lastName:"CHEN"
+};
+
+*想要取得分開或完整的名子都可以
+console.log(profile.lastName + profile.lastName);
+
+------------------------------------
+使用 Proxy :包裝屬性組合細節，提供簡要的介面
+
+*程式範例:
+let profile={
+    firstName:"YU JEN",
+    lastName:"CHEN"
+};
+//建立代理物件
+let proxy=new Proxy(profile,{
+    //處理函式get的物件，第一個參數為目標物件target -->也就是profile
+    //第二個參數為要操作的屬性 property 名稱 
+    get:function(target,property){
+        if(property==="chineseName"){
+            return target.lastName + target.firstName;
+        }else{
+            return target[proprty]; //原本目標物件和屬性，也就是 profile物件 和屬性 firstName & lastName。
+        }
+    }
+});
+//利用 Proxy 物件呼叫函式會執行 get 函式。
+console.log(proxy.chineseName); // CHEN YU JEN
+console.log(proxy.firstName); // YU JEN

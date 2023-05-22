@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5"/>
+    <title>Funky Navbar</title>
+    <style>
+        body{
+            margin:0;
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            background-color:cornsilk;
+        }
+        ul{
+            padding:0;
+            list-style-type:none;
+        }
+        ul li{
+            box-sizing:border-box;
+            width:15em;
+            height:3em;
+            font-size:20px;
+            border-radius:0.5em;
+            margin:0.5em;
+            box-shadow:0 0 1em rgba(0,0,0,0.2);
+            color:white;
+            font-family:sans-serif;
+            text-transform:capitalize;
+            line-height:3em;
+            cursor:pointer;
+
+            transition:300ms;
+        }
+        /* https://csscoke.com/2013/09/21/%E4%BD%BF%E7%94%A8css3-nth-childn-%E9%81%B8%E5%8F%96%E5%99%A8%E8%A9%B3%E8%A7%A3/
+        以上連結講解了 nth-child(n) 的應用*/
+        ul li:nth-child(even){
+            background-image:linear-gradient(
+                to left,orange,tomato
+            );
+            text-align:right;
+            padding-right:10%;
+            transform:perspective(500px) rotateY(-45deg);
+        }
+        ul li:nth-child(odd){
+            background-image:linear-gradient(
+                to right,orange,tomato
+            );
+            padding-left:10%;
+            text-align:left;
+
+            transform:perspective(500px) rotateY(45deg);
+        }
+        ul li:nth-child(even):hover{
+            transform:perspective(200px) rotateY(-45deg);
+            padding-right:5%;
+        }
+        ul li:nth-child(odd):hover{
+            transform:perspective(200px) rotateY(45deg);
+            padding-right:5%;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>home</li>
+        <li>product</li>
+        <li>services</li>
+        <li>contact</li>
+    </ul>
+</body>
+</html>

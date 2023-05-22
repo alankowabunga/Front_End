@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runnung Placeholder</title>
+    <style>
+        *,
+        *:before,
+        *:after{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        body{
+            height:100vh;
+            background:linear-gradient(135deg,#ff5b84,#eb3461);
+            display:grid;
+            place-items:center;
+        }
+        .container{
+            background-color:black;
+            padding:50px;
+            border-radius:5px;
+            box-shadow:0 15px 23px rgba(0,0,0,0.15);
+        }
+        label,
+        input{
+            font-size:18px;
+            letter-spacing:0.5px;
+        }
+        label{
+            display:block;
+            position:relative;
+            color:#eb3461;
+            margin-bottom:10px;
+        }
+        input{
+            position:relative;
+            width:300px;
+            padding:10px 0;
+
+            background-color:transparent;
+            border:none;
+
+            border-bottom:1.5px solid #eb3461;
+            outline:none;
+            color:white;
+            font-weight:400;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+    </div>
+
+
+    <script src="13script.js"></script>
+</body>
+</html>

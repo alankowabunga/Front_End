@@ -1,0 +1,63 @@
+/* 
+所以一旦你學會偽元素::before和::after的應用，它的優點就是自由度極高！！
+還有只要你有一個HTML標籤作為基底，每一個標籤你都可以建立::before和::after兩個新的區塊出來，
+讓你不用修改HTML就能完成一堆實用的效果囉！
+*/
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:3rem;
+    flex-direction:column;
+}
+
+p::before{
+    /* 沒有 content 則 ::before/after 不會有效果 */
+    content:"Before(display:block)";
+    display:block;
+    color:blue;
+    background: red;
+    
+    /* width:10px;
+    height:10px; */
+}
+
+p::after{
+    /* 沒有 content 則 ::before/after 不會有效果 */
+    content:"After";
+    color:orange;
+    background: gray;
+    
+    /* width:10px;
+    height:10px; */
+
+}
+
+
+div{
+    position:relative;
+    font-size:30px;
+    font-style:italic;font-weight:bold;
+    
+}
+div::after{
+    content:"123";
+    position:absolute;
+    width:100%;
+    top:100%;
+    left:0;
+    right:0;
+
+
+    background:rgb(130,130,0);
+
+}
+/* 圖片檔無作用
+img{
+    content:"";
+    background: #000;
+    height: 100px;
+    width: 100px;
+} */

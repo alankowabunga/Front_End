@@ -1,0 +1,10 @@
+/* Class selector */
+.title1{margin-top:10px;margin-bottom:10px;font-weight:bold;font-size:24px}
+.title2{margin-top:15px;margin-bottom:15px;font-weight:bolder;font-size:24px}
+
+/* ID selector */
+#content{width:400px;padding:10px;border:1px dashed blue;color:crimson}
+
+/* tag-name selector */
+body{background-color:bisque}
+span{text-decoration:line-through;color:burlywood}

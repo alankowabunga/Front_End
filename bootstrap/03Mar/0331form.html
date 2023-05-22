@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta boxset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Practice</title>
+    <link rel="stylesheet" href="css-index/bootstrap.min.css">
+    <style>
+        :root {
+            --bgClr: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            background-image: var(--bgClr);
+            border:4px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="box border border-5 border-dark">
+            <div class="text text-center fs-1"> 每行是 row ，再用3個 col分隔
+                <div class="row mt-4">
+
+                    <div class="col-auto">
+                        <label for="acct" class="form-label">帳號</label>
+                    </div>
+                    <div class="col-auto">
+                        <input class="" type="text" name="acct" id="acct">
+                    </div>
+                    <div class="col-auto">
+                        <div class="form-text">不會留下紀錄</div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+
+                    <div class="col-auto">
+                        <label for="nickName" class="form-label">綽號</label>
+                    </div>
+                    <div class="col-auto">
+                        <input class="" type="text" name="nickName" id="nickName">
+                    </div>
+                    <div class="col-auto">
+                        <div class="form-text">不會留下紀錄</div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-auto">
+                        <label for="blank3" class="form-label">第三格</label>
+                    </div>
+                    <div class="col-auto">
+                        <input class="" type="text" name="blank3" id="blank3">
+                    </div>
+                    <div class="col-auto">
+                        <div class="form-text">不會留下紀錄</div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="text text-center">
+                        <button class="btn btn-lg btn-outline-danger
+                        " id="sendBtn">送出</button>
+                        <button class="btn btn-lg btn-warning
+                        " id="clearBtn">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <!-- bootstrap 參考官網寫法 -->
+    <form>
+        <div class="box border border-5 border-danger">
+            <div class="text fs-1"> add .row class to form-group
+                <!-- Horizontal form: add .row class to form-group，and use .col classes to specify the width -->
+                <div class="form-group row">
+                    <label for="inputId" class="col-2 col-form-label col-form-label-sm">col-form-label</label>
+                    <div class="col-5">
+                        <input type="text" name="" id="inputId" class="form-control-lg">
+                    </div>
+                    <div class="col-5">
+                        <div class="form-text">form-text</div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </form>
+    <br><br><br><br><br>
+    <!-- 顯示結果的區塊 -->
+    <div class="box" id="display" style="display:none;">
+    </div>
+    <!-- 顯示的區塊先隱藏 display:none，輸出結果時再顯示 -->
+
+
+
+    <script src="js-index/bootstrap.bundle.min.js"></script>
+    <script src="js-index/jquery-source-code.js"></script>
+    <script>
+        $(function () {
+            $("#sendBtn").click(function () {
+
+                // 檢查元素的值的長度，並利用判斷式決定是否顯示結果
+                if ($("#acct").val().length>0) {
+                                   
+                    $("#display").html("<h1>帳號:" + $("#acct").val() + "</h1>")
+
+                    // 將隱藏的顯示區塊顯示出來，利用 jQuery .css("attribute","value")方法
+                    $("#display").css("display","block");
+                }
+            })
+
+            $("#clearBtn").click(function () {
+                $("#acct").val("");
+                $("#nickName").val("");
+                $("#blank3").val("");
+                $("#display").html("");
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+/* 
+pseudo-class::is() , :where(), :has() 選擇器
+
+:is() 可以當作 parent selector，且一口氣選擇多個
+eg.
+.example_1 h3
+.example_1 h4
+.example_1 a{
+    color:red;
+}
+
+可以直接寫成
+.example_1 :is(h3,h4,a){
+    color:red;
+}
+
+也適合用在 :hover, :focus 相關
+eg.
+
+a:is(:hover,:focus){
+    color:red;
+}
+-------------------------------------------
+
+
+.container:hover :is(child-elemnts)
+*/

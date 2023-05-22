@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" width="device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>日光美食部落</title>
+        <style>
+            header{width:100%;height:100px;text-align:center;text-decoration:underline;background-color:antiquewhite;}
+            nav{float:left;width:20%;height:400px;background-color: lightblue;} /* float 浮動元素: 設定值有 none預設值/left/right，作用有點像文繞圖*/
+            main{float:left;width:60%;height:400px;background-color:lightgoldenrodyellow;}
+            aside{float:left;width:20%;height:400px;background-color:lightpink;}
+            footer{clear:left;width:100%;height:50px;background-color: cadetblue;text-align:center;} /* clear 清除浮動元素，因此不會繼續往右排，而是順到下方區塊*/
+        </style>
+    </head>
+    <body>
+        <!-- 頁首 -->
+        <header>
+            <h1>Alan美食部落</h1>
+            <p>分享美食的小園地，雯雯趕快加入吧!</p>
+        </header>
+
+        <!-- 導覽列 -->
+        <nav>
+            <ul>
+                <li><a href="#a1.html">Taipei</a></li>
+                <li><a href="a2.html">Tainan</a></li>
+                <li><a href="a3.html">Taitung</a></li>
+                <li><a href="a4.html">Taishi</a></li>            
+            </ul>
+        </nav>
+
+        <!-- 主要內容 -->
+        <main>
+            <article>
+                <h2 id="a1.html">Tourism Site</h2>
+                <p>1. Prosperous & Modern Taipei</p>
+                <p>2. Old-fashion & delicacy Tainan</p>
+                <hr/>
+                <pre>
+                    瀏覽器會把2+以上的空白格視作空白格
+                    但利用 pre 預先格式化資料
+                    可以把整個區塊預留下來
+                </pre>
+                <hr/>
+                3. Natural & Scenery Taitung<br> <!--利用br來換行-->
+                4. Peace & Offshore Taishi<br>
+                End.
+
+            </article>
+        </main>
+
+        <!-- 側邊攔 -->
+        <aside>
+            <section>
+                <h2>About us</h2>
+                <p>This is a Blog consisted by a bunch of big mouth</p>
+            </section>
+            <section>
+                <h2>Sponsor</h2>
+                <ol>
+                    <li><a href="s1.html">Firm No.1</a></li>
+                    <li><a href="s2.html">Firm No.2</a></li>                    
+                </ol>
+            </section>
+        </aside>
+
+        <!-- 頁尾 -->
+        <footer>
+            <p> &copy; 2022 Alan's Adventure</p> <!-- &copy; 是版權符號copyright sign-->
+            <p><a href="#top">Back to top</a></p>
+        </footer>
+    </body>
+</html>

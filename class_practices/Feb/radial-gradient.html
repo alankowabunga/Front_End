@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" width="device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <meta http-equiv="refresh" content="5">
+        <title>radial-gradient</title>
+        <style>
+            :root{
+                /* at 中心位置 離左邊##% 離右邊##% */
+                --bgcolor: radial-gradient(closest-side at 60% 20%, #a18cd1 0%, #fbc2eb 100%);
+            }
+            div{
+                width:150px;
+                height:150px;
+                border:1px solid blue;
+                margin:60px;
+            }
+
+            .rd1{
+                background:var(--bgcolor);
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="rd1">cloest-corner</div>
+        <div class="rd2">farthest-side</div>
+        <div class="rd3">closest-corner</div>
+        <div class="rd4">farthest-corner</div>
+    </body>
+</html>

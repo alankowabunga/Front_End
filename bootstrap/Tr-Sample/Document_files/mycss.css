@@ -1,0 +1,17 @@
+:root {
+    --mycolor001: #FAA98B;
+    --mycolor002: #E6AECF;
+    --mycolor003: #AEE0DD;
+    --mycolor004: #01ACBD;
+    --mycolor005: #E95761;
+    --mycolor006: #2d6379;
+    --mycolor007: #236426;
+    --mycolor008: #5c284d;
+    --mycolor009: #f7eaf3;
+}
+.demo {
+    width: 95%;
+    border: 2px solid var(--mycolor008);
+    padding: 30px;
+    margin: 30px;
+}

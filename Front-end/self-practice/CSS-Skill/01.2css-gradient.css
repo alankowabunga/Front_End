@@ -1,0 +1,54 @@
+:root{
+    --gradient:linear-gradient(
+        45deg,
+        #845ec2,
+        #d65db1,
+        #ff6f91,
+        #ff9671,
+        #ffc75f,
+        #f9f871
+    );
+}
+body{
+    font-family:basic-sans,sans-serif;
+    min-height:100vh;
+    display:flex;justify-content:center;align-items:center;
+    font-size:1.125em;line-height:1.6;
+    color:#333;background:#ddd;
+    background-image:var(--gradient);
+    background-size:400%;
+    /* animation:bg-animation 5s infinite alternate; */
+}
+
+@keyframes bg-animation{
+    0%{
+        background-position:left;
+    }
+    100%{
+        background-position:right;
+    }
+}
+
+.content{
+    background-color:#fff;
+    width:70vw; padding:3em;
+    box-shadow:0 0 3em rgba(0,0,0,0.15);
+}
+
+.title{
+    margin:0 0 0.5em;
+    text-transform:uppercase;
+    font-weight:900;
+    font-style:italic;
+    font-size:4rem;
+    color:#ee6352;
+    line-height:0.8;
+    margin:0;
+
+    /* 使文字底色為漸層樣式，先設定background-image，再 clip to text 會被文字擋在後面 ，最後將 text 原本的顏色 transparant */
+    background-image:var(--gradient);
+    background-clip:text;-webkit-background-clip:text; /* 在屬性前面加上 -webkit 可針對瀏覽器(Chrome)來支援 CSS 3 的呈現*/
+    color:transparent;
+    background-size:400%; /* 要做漸層動畫都要先將背景放大 */
+    animation:bg-animation 5s infinite alternate;
+}

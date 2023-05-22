@@ -1,0 +1,76 @@
+/*  為了保護大家的眼睛，我們需要一點 CSS 修飾，來達成下列目標：
+
+1. 移除超連結的藍色和底線
+2. 移除 <ul> 預設的項目樣式 (●)
+3. 調整背景顏色、字型大小、padding、margin
+4. 加入 hover 效果：滑鼠游標移至連結時，改變導覽列項目的字和背景顏色
+*/
+
+nav a{                 /* 使用descendant Selector 選擇 nas 標籤之下的 a 元素，因此直接 nas a{} 來操作 */
+    color:inherit;     /*移除超連結顏色*/
+    text-decoration:none;  /*移除超連結底線樣式*/
+    font-size:1.2rem;
+
+    display:block;  /*讓 <a> 填滿 <li>，改成區塊級元素 (block-level element)，使 hover搭配點擊超連結效果能在整個範圍有效 */
+    padding:10px;
+}
+
+nav a:hover{
+    background-color:crimson;
+    color:antiquewhite;
+}
+
+nav > ul{             /* nas & ul 為父子層，用nas > ul 來操作標籤 */
+    list-style:none;  /* 移除項目符號 */
+    background-color: antiquewhite;
+    margin:0;
+    padding:0;
+}
+
+
+/*加入 hover 效果:
+
+nav a:hover {
+    background-color: rgb(115, 115, 115);
+    color: white;
+}
+問題來了，我們發現當滑鼠游標移到空格處時，效果就不見了。
+這其實很合理，因為我們使用的 CSS 選擇器 (selector) 是 nav a:hover，
+而 <a> 會隨著裡面的文字長度而調整寬度。
+
+那如果改成 nav li:hover 呢？
+nav li:hover {
+    background-color: rgb(115, 115, 115);
+    color: white;
+}
+顏色是改變了。但如果在空格處點擊，並不會出現超連結的效果，
+這也沒解決問題⋯⋯繞了半天，基本上我們的問題就是 <a> 不夠寬。
+
+因為 <a> 是行內元素 (inline element)，所以文字多長，它就多寬。
+我們可以透過 display: block 把它改成區塊級元素 (block-level element)。
+再加上 padding 調整一下，整個 navbar 的雛形就完成囉！
+*/
+.head{
+    flex:auto;
+    border:1px solid black
+}
+.flex{
+    display:flex; /*讓下一層的項目水平排列*/
+}
+.sec{
+    background-color:bisque;
+    flex:auto;
+    border:1px dashed crimson;
+}
+.asi{
+    background-color:burlywood;
+    flex:auto;
+}
+.asi2{
+    justify-content:flex-end;
+}
+.span{
+    font-weight:bold;
+    text-decoration:underline;
+    color:coral;
+}

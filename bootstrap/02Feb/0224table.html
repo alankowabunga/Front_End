@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css-index/bootstrap.min.css">
+    <title>Table</title>
+    <style>
+        @media screen and (max-width:500px) {
+            .table-rwd thead{
+                display:none;
+            }
+            .table-rwd thead+tbody+tfoot{
+                display:block;
+
+            }
+            .table-rwd tbody td{
+                display:block;
+            }
+            .table-rwd tfoot tr{
+                display:block;
+                
+            }
+            .table-rwd tfoot td{
+                display:block;
+            }
+            .table-rwd tr td::before{
+                content:attr(data-th)" :";
+                font-weight:bolder;
+                color:brown;
+                font-size:larger
+            }
+            .table-rwd td span{
+                display:block;
+            }
+            .table{
+                display:flex;
+                flex-direction:column
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table table-hover table-bordered table-rwd" >
+        <caption>Practice</caption>
+        <thead class="table-dark">
+            <tr>
+                <th>產品資料</th>
+                <th>商品</th>
+                <th>價位</th>
+                <th>數量</th>
+                <th>備註</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-danger">
+                <td data-th="產品資料" ><span class="col">1</span></td>
+                <td data-th="商品" ><span class="col"></span>1</span></td>
+                <td data-th="價位" ><span class="col"></span>1</span></td>
+                <td data-th="數量" ><span class="col"></span>1</span></td>
+                <td data-th="備註" ><span class="col"></span>1</span></td>
+            </tr>
+            <tr class="table-warning">
+                <td data-th="產品資料">2</td>
+                <td data-th="商品">2</td>
+                <td data-th="價位">2</td>
+                <td data-th="數量">2</td>
+                <td data-th="備註">2</td>
+            </tr>
+        </tbody>
+        <tfoot class="table-success">
+            <tr>
+                <td data-th="產品資料">3</td>
+                <td data-th="商品">3</td>
+                <td data-th="價位">3</td>
+                <td data-th="數量">3</td>
+                <td data-th="備註">3</td>
+            </tr>
+        </tfoot>
+    </table>
+    <script src="./js-index/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!-- Blog -->
+<!-- https://www.fooish.com/html/input-tag.html -->
+<!-- https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" width="device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>Blog drill</title>
+        <link rel="stylesheet" type="text/css" href="02_2cat.css">
+    </head>
+    <body>
+        <!-- Id方法: var 變數 = document.getElementById("ID屬性") -->
+        <header>
+            <h1>Pet Infomation</h1>            
+            <p >曬曬分享你家的毛球兒吧~</p>
+        </header>
+
+        
+        <main>
+            <p><b>*為必填項目</b></p>
+            <p><i>毛球兒資料</i></p>
+
+            <table border="1" cellpadding="10" >
+                <tr>
+                    <td>毛球名*</td>
+                    <td><input type="text" id="pet_name" placeholder="寵物的名子"></td>
+                </tr>
+                <tr>
+                    <td>年紀</td>
+                    <td>
+                        <select id="age">
+                            <option value="puppy" disabled>disabled</option>
+                            <option value="young">壯年</option>
+                            <option value="old">老犬</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>愛吃的食物</td>
+                    <td>
+                        <input type="checkbox" name="fish" id="fish">魚
+                        <input type="checkbox" name="meat" id="meat">肉泥
+                        <input type="checkbox" name="fodder" value="fodder" id="">飼料
+                        <input type="checkbox" name="other" value="other" id="">其他
+                    </td>
+                </tr>
+                <tr>
+                    <td>性別</td>
+                    <td>
+                        <input type="radio" name="sex" value="boy" id="" checked>男生
+                        <input type="radio" name="sex" value="girl" id="">女生
+                    </td>
+                </tr>
+                <tr>
+                    <td>照片*</td>
+                    <td>
+                        <!-- multiple選擇多檔案，capture 考使用手機鏡頭拍照-->
+                        <input type="file" accept="image/*" multiple capture>
+                    </td>
+                </tr>
+            </table>
+        
+
+            <p>Content</p>
+            <table border="1" cellpadding="10">
+                <tr>
+                    <td>你的名子*</td>
+                    <td><input type="text" id="ppl_name" value="value:預設值"><br><small>#可用暱稱</small></td>
+                </tr>
+                <tr>
+                    <td>E-mail*</td>
+                    <td><input type="text" placeholder="placeholder:提示訊息"><br><small>#請輸入型文字</small></td>
+                </tr>
+                <tr>
+                    <td>留言</td>
+                    <td><textarea id="message" rows="10"></textarea></td>
+                </tr>
+            </table>
+            
+            <input type="reset" value="清除重填"></button>
+            <button id="btn" >送出</button> 
+            
+        </main>
+        
+        <footer><small>&copy; Alan's Web All Rights Reserved.</small></footer>
+    <script src="02cat_2.js"></script>
+    </body>
+
+    
+</html>

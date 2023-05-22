@@ -1,0 +1,32 @@
+header{
+    text-align: center;color:brown;
+}
+section{
+    /* 自首縮排: text-indent(em 代表預設值的兩倍) */
+    text-indent:2em;background-color: bisque;width:66%;
+    /*相對定位: https://ithelp.ithome.com.tw/articles/10277454?sc=iThomeR */
+    position: relative;
+    top: 10%;  
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+.one{
+    color:blue;text-decoration: underline;font-style: italic;
+}
+.two{
+    color:blue;text-decoration: underline;font-style: italic;
+    font-weight:bold;
+}
+.three{
+    color:blue;text-decoration: underline;font-style: italic;
+}
+.four{
+    color:green;text-decoration:overline;
+    text-align: center;
+}
+.five{
+    color:green;text-decoration:overline;
+}
+.six{
+    color:green;text-decoration:overline;
+}

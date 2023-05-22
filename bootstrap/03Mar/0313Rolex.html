@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolex</title>
+    <link rel="stylesheet" href="css-index/bootstrap.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            height: 100%;
+            padding: 0;
+        }
+
+        .banner {
+            height: 13em;
+            background-image: url(imgFolder/Rolex_Submariner_banner.jpg);
+            background-size: fill;
+            background-position: 0% 58%;
+            background-repeat: no-repeat;
+            max-width: 100%;
+            filter: blur(0.3rem);
+            animation: slide 3000ms linear forwards;
+        }
+
+        @keyframes slide {
+            100% {
+                background-position: 50% 58%;
+                filter: blur(0) saturate(150%);
+
+            }
+        }
+
+        .footer {
+            overflow: hidden;
+            animation: bright 4000ms linear alternate-reverse infinite;
+        }
+
+        .footerCol {
+            height: 7em;
+            background-image: url(imgFolder/Rolex-footer00.jpg);
+            background-size: fill;
+            background-repeat: no-repeat;
+            background-position: 50% 55%;
+            animation: bright 3000ms linear alternate infinite;
+        }
+
+        @keyframes bright {
+            0% {
+                filter: brightness(75%);
+            }
+
+            100% {
+                filter: brightness(130%);
+            }
+        }
+
+        .watch1 {
+            position: relative;
+        }
+
+        /* 因為創間一個新的 div 放文字內容，但不知道為什麼會跑版，因此嘗試用 attr() 方法 */
+        .watch1::before {
+            content: attr(data-1);
+            position: absolute;
+            width: auto;
+            color: aliceblue;
+            font-size: larger;
+            font-weight: bold;
+            backdrop-filter: blur(1.5rem);
+            top: 20%;
+
+            opacity: 0;
+            transition: 800ms;
+        }
+
+        .watch1:hover::before {
+            opacity: 1;
+        }
+
+        .watch2 {
+            position: relative;
+        }
+        .watch2::before {
+            content: attr(data-2);
+            position: absolute;
+            width: auto;
+            color: rgb(56, 22, 2);
+            font-size: larger;
+            font-weight: bold;
+            backdrop-filter: blur(1.5rem);
+            top: 20%;
+
+            opacity: 0;
+            transition: 800ms;
+        }
+
+        .watch2:hover::before {
+            opacity: 1;
+        }
+
+        .watch3 {
+            position: relative;
+        }
+        .watch3::before {
+            content: attr(data-3);
+            position: absolute;
+            width: auto;
+            color: rgb(150, 4, 4);
+            font-size: larger;
+            font-weight: bold;
+            backdrop-filter: blur(1.5rem);
+            top: 20%;
+
+            opacity: 0;
+            transition: 800ms;
+        }
+
+        .watch3:hover::before {
+            opacity: 1;
+        }
+
+        .watch4 {
+            position: relative;
+        }
+        .watch4::before {
+            content: attr(data-4);
+            position: absolute;
+            width: auto;
+            color: rgb(215, 220, 249);
+            font-size: larger;
+            font-weight: bold;
+            backdrop-filter: blur(1.5rem);
+            top: 20%;
+
+            opacity: 0;
+            transition: 800ms;
+        }
+
+        .watch4:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 在row 加入 align-content-center 使圖片垂直致中、text-center 使圖片水平致中-->
+    <div class="container bg-dark text-center">
+
+        <div class="row banner align-content-center mx-0 mb-2">
+            <div class="col-12 px-0"></div>
+        </div>
+        <!-- banner end -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 main align-content-center text-center g-2">
+            <div class="col watch1"
+                data-1="永遠不過時的勞力士，絕對是 Rolex Submariner Ref. 124060，經典的外型延伸一直以來的經典，錶殼卻從40mm增大到41mm，錶腳與錶帶都略有不同，低調好襯可以說是不敗的運動錶款！">
+                <img src="./imgFolder/Rolex-Submariner-01.webp" class="img img-fluid img-responsive rounded-4"
+                    title="Submariner Ref. 124060">
+            </div>
+            <div class="col  watch2"
+                data-2="GMT-Master II家族近年來不只鋼錶受歡迎，連帶沙示圈的金鋼款，都一樣受到追捧，黑啡色的配襯極為搶眼，加上3285型機芯帶來70小時動力，極為完備！">
+                <img src="./imgFolder/Rolex-GMT-Master-2.webp" class="img img-fluid img-responsive rounded-4"
+                    title="Rolex GMT-Master II Ref. 126711CHNR">
+
+            </div>
+            <div class="col watch3" data-3=" 2018年推出的百事圈，從推出至今都仍然是風雲之作，皆因久久未有百事圈的推出，大家對於百事圈自然是極之渴求，雖然推出之時，其五珠帶的設計受到了不少批評，但事實證明，根本毫不影響其受歡迎程度！">
+                <img src="./imgFolder/Rolex-GMT-Master-03.webp" class="img img-fluid img-responsive rounded-4"
+                    title="GMT-Master II Ref. 126710BLRO">
+
+            </div>
+            <div class="col watch4" data-4="2019年登場的藍黑圈，一出已經供不應求，126710BLNR有全新機芯，帶來70小時的動力儲存，整枚腕錶已經大大不同了，就算是五珠帶，仍然有不少捧場客，吸引力仍然非常高！">
+                <img src="imgFolder/Rolex-04.webp" class="img img-fluid img-responsive rounded-4"
+                    title="GMT-Master II Ref. 126710BLNR">
+
+            </div>
+        </div>
+        <!-- main end -->
+        <div class="row footer m-1">
+            <div class="col-12 footerCol"></div>
+        </div>
+        <!-- footer end -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        body{
+            display:grid;
+            place-items:center;
+            height:100vh;
+            width:100vw;
+            
+        }
+        .container{
+            /* height:10em;
+            width:10em; */
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .container div{
+            height:10rem;
+            width:10rem;
+
+                        
+            transition: 2500ms ease infinite;
+            -moz-transition: 2500ms ease infinite;
+            -webkit-transition: 2500ms ease infinite;
+            -o-transition: 2500ms ease infinite;
+            -ms-transition:2500ms ease infinite;
+        }
+        .container:hover div{
+            height:13rem;
+            width:13rem;
+        }
+        .container>p{
+            
+            font-size:1.3rem;
+            color:rgb(25, 71, 141);
+            text-shadow:0 0 .5rem #053ef8;
+            -webkit-text-stroke-color: #053ef8;
+            -webkit-text-stroke-width: .8px;
+            color:transparent;
+        }
+        .box1{
+            border-radius:30% 70% 50% 50% / 37% 30% 70% 63% ;
+            
+            position:absolute;
+            border:2px solid blue;
+            text-align:center;
+            line-height:10em;
+            color:rgb(89, 89, 235);
+            box-shadow:0 0 1.2em 0.1em #25038a;
+            animation:rotate 1000ms linear infinite;
+        }
+        .box2{
+            border-radius:25% 75% 32% 68% / 77% 29% 71% 23% ;
+            
+            position:absolute;
+            border:2px solid blue;
+            text-align:center;
+            line-height:10em;
+            color:rgb(89, 89, 235);
+            animation:rotate 1000ms linear infinite;
+        }
+        .box3{
+            border-radius:30% 70% 35% 65% / 77% 62% 38% 23% ;
+            
+            position:absolute;
+            border:2px solid blue;
+            text-align:center;
+            line-height:10em;
+            color:rgb(89, 89, 235);
+            box-shadow:0 0 1.2em 0.1em #d10505;
+            animation:reversed 1000ms linear infinite;
+        }
+        .box4{
+            border-radius:32% 68% 54% 46% / 77% 29% 71% 23% ;
+            
+            position:absolute;
+            border:2px solid blue;
+            text-align:center;
+            line-height:10em;
+            color:rgb(89, 89, 235);
+            animation:rotate 1000ms linear infinite;
+        }
+        .box5{
+            border-radius:25% 75% 17% 83% / 77% 29% 71% 23% ;
+            
+            position:absolute;
+            border:2px solid blue;
+            text-align:center;
+            line-height:10em;
+            color:rgb(89, 89, 235);
+            box-shadow:0 0 1.2em 0.1em #b9d105;
+            animation:reversed 1000ms linear infinite;
+        }
+        @keyframes rotate{
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+        @keyframes reversed{
+            100%{
+                transform:rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" onmouseover="change()" onmouseout="end()">
+        <p id="txt" >碰我試試?</p>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+
+    </div >
+    <script>
+        function change(){
+            var txt=document.querySelector("#txt");
+            txt.textContent="阿!";
+        }
+        function end(){
+            var txt=document.querySelector("#txt");
+            txt.innerHTML="還真來 0A0";
+        }
+        // function change(){
+        //     var txt=document.querySelector("#txt");
+        //     txt.style.display="none";
+        // }
+    </script>
+</body>
+</html>

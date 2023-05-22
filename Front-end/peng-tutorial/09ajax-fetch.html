@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX/XHR</title>
+</head>
+<body>
+    <h2>AJAX /XHR 網路連線實務</h2>
+    <button onclick="getData();">點擊取得連線資料</button>
+    <div id="result"></div> <!-- 要呈現已取得資料後在螢幕上，先在 html body 放入空的 div，並將資料放入(可參考 DOM 練習) -->
+    <script>
+        // 測試用的連線網址: https://cwpeng.github.io/live-records-samples/data/products.json
+
+        function getData(){
+            fetch("https://cwpeng.github.io/live-records-samples/data/products.json").then(function(response){
+                // console.log(response); 確定連線成功
+                return response.json();
+            }).then(function(data){
+                // console.log(data);此時為整包的資料(看最下方)，利用 for 迴圈將整包的資料分別物件獨自印出
+
+                let result=document.querySelector("#result");
+                result.innerHTML=""; //將區塊清空，才不會多次點擊讓資料無限產生!!
+                for (i=0;i<data.length;i++){
+                    let product = data[i]; 
+                    // console.log(product.name); 可以將陣列中的 key:value 分別印出
+                    // 使用 innerHTML 進行網頁渲染(!!特別注意是用 += 將後續資料接者印在後面!!)
+                    result.innerHTML += "<div>"+product.name+","+product.price+","+product.description+"</div>";
+                }
+            });
+            };
+            /*
+                0: 
+                description: "最新的 Google 手機。"
+                name:"Pixel 3"
+                price:27700
+                [[Prototype]]:Object
+                1: 
+                description:"在大螢幕上播放喜歡的影片。"
+                name:"Chromecast"
+                price:1500
+                [[Prototype]]:Object
+                2: 
+                description:"最新的 Chromebook 產品。"
+                name:"Pixel Book"
+                price:12000
+                [[Prototype]]:Object
+                length:3
+                [[Prototype]]:Array(0)
+                            */
+            
+    </script>
+</body>
+</html>

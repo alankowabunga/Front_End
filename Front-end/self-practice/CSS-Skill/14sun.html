@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blazing Sun</title>
+    <style>
+        *,
+        *::before,
+        *::after{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        body{
+            width:100vw;
+            height:100vh;
+            display:grid;
+            place-items:center;
+            background-color:#212131;
+        }
+        .sun{
+            margin:0 auto;
+            width:200px;
+            height:200px;
+            background-color: #ffde00;
+            border-radius:50%;
+            box-shadow:0 0 0 20px #ffde0080,
+                            0 0 0 40px #ffde0060,
+                            0 0 0 60px #ffde0040,
+                            0 0 0 80px #ffde0010, 
+                            0 0 0 100px #ffde0000,
+                            0 0 40px 100px #ffde0010;
+
+            animation:sun 2000ms infinite linear forwards,rays 2000ms 2000ms infinite linear;
+        }
+        @keyframes sun{
+            0%{
+                box-shadow:none;
+            }
+        }
+        @keyframes rays{ /*製造出重疊渲染效果，陰影初始值設小一點*/
+            0%{
+                box-shadow:0 0 0 0px #ffde0080,
+                            0 0 0 20px #ffde0080,
+                            0 0 0 40px #ffde0040,
+                            0 0 0 60px #ffde0020, 
+                            0 0 0 80px #ffde0010,
+                            0 0 40px 100px #ffde0010;
+            }
+            100%{
+                box-shadow:0 0 0 20px #ffde0080,
+                            0 0 0 40px #ffde0060,
+                            0 0 0 60px #ffde0040,
+                            0 0 0 80px #ffde0010, 
+                            0 0 0 100px #ffde0000,
+                            0 0 40px 100px #ffde0010;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sun"></div>
+</body>
+</html>

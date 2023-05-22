@@ -1,0 +1,35 @@
+<!--練習:重新整理HTML&CSS-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CSS selector</title>
+        <link rel="stylesheet" type="text/css" href="05.3css-selector.CSS"/>
+        <!-- 以下方式利用 style標籤將CSS樣式和HTML切割出來，然而我們更可以將CSS放在另一個檔案再將其連結到此主檔案操作，
+            我們將 CSS樣式另存到檔案05.3css-selector.CSS中，將其連結帶入
+        <style>
+            /* Class selector */
+            .title1{margin-top:10px;margin-bottom:10px;font-wight:bold;font-size:24px}
+            .title2{margin-top:15px;margin-bottom:15px;font-weight:bolder;font-size:24px}
+           
+            /* ID selector */
+            #content{width:400px;padding:10px;border:1px dashed blue;color:crimson}
+           
+            /* tag-name selector */
+            body{background-color:bisque}
+            span{text-decoration:line-through;color:burlywood}
+        </style>    現在將 CSS樣式另存到檔案05.3css-selector.CSS中，將其連結帶入
+        --> 
+
+    </head>
+    <body>
+        <div class="title1">First title</div>
+        <div id="content">
+            Using span tag<span>to manipuate the words</span> of the sentences.
+        </div>
+        <div class="title2">Second title</div>
+        <div id="content">
+            Using span tag<span>to manipuate the words</span> of the sentences.
+        </div>
+    </body>
+</html>

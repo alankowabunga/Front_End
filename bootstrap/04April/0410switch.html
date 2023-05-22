@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta boxset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Practice</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        * {
+            font-size: 1.5em;
+        }
+
+        .box {
+            background-color: #27a7d2c9;
+            border: 3px solid salmon;
+            border-radius: 1em;
+            box-shadow: 0.5em 0.5em 1em #ee9595;
+            margin: 5em;
+            padding: 1em;
+        }
+
+        .room {
+            height: 3em;
+            width: 3em;
+            background-color: #868080;
+        }
+    </style>
+</head>
+
+<body class="bg-secondary">
+
+    <div class="box">
+        <div class="fs-2">1. Switch -> .change()</div>
+        <div class="form-check form-switch">
+            <input type="checkbox" class="form-check-input" role="switch" id="myled">
+            <label for="myled" class="form-check-label" id="led-txt">開關燈</label>
+            <div class="room"></div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="fs-2">2. 年齡(range) -> on('input',function)</div>
+        <label for="age-range" class="form-label" id="age-txt">Your age:0</label>
+        <input type="range" class="form-range" name="" id="age-range" value="0">
+
+        <div class="fs-2">rgba(value="0")</div>
+
+        <label for="r-range" class="form-label text text-danger" id="r-txt">red:0</label>
+        <input type="range" class="form-range" name="" id="r-range" value="0" min="0" max="255" oninput="rgba()">
+
+        <label for="g-range" class="form-label text text-success" id="g-txt">green:0</label>
+        <input type="range" class="form-range" name="" id="g-range" value="0" min="0" max="255" oninput="rgba()">
+        <label for="b-range" class="form-label text text-primary" id="b-txt">blue:0</label>
+        <input type="range" class="form-range" name="" id="b-range" value="0" min="0" max="255" oninput="rgba()">
+        <label for="a-range" class="form-label text text-dark" id="a-txt">transprent:1</label>
+        <input type="range" class="form-range" name="" id="a-range" value="1" min="0" max="1" step="0.01"
+            oninput="rgba()">
+        <div class="room" id="rgba-room"></div>
+    </div>
+
+    <div class="box">
+        <div class="fs-2">3. on('input')</div>
+        <label for="txt" class="form-label" id="txting">You're typing:</label>
+        <input type="text" class="form-check" id="txt">
+    </div>
+
+
+    <script src="js/jquery-source-code.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        // .01 開關燈
+        $("#myled").change(function () {
+            // console.log($(this).is(':checked'));
+            if ($(this).is(':checked')) {
+                $("#led-txt").text("開燈");
+                $(".room").css("background-color", "white");
+            } else {
+                $("#led-txt").text("關燈");
+                $(".room").css("background-color", "black");
+            }
+        }) 
+        // 02 年齡 (jQuery)
+        $("#age-range").on("input", () => {
+            // console.log($("#age-range").val());
+
+            $("#age-txt").text("Your age:" + $("#age-range").val());
+        })
+        // rgba 製作功能(oninput)
+
+        function rgba() {
+            var red = $("#r-range").val();
+            var green = $("#g-range").val();
+            var blue = $("#b-range").val();
+            var alpha = $("#a-range").val();
+            // console.log(red,green,blue,alpha);
+
+            $("#r-txt").text("red: " + $("#r-range").val());
+            $("#g-txt").text("green: " + $("#g-range").val());
+            $("#b-txt").text("blue: " + $("#b-range").val());
+            $("#a-txt").text("transparent: " + $("#a-range").val());
+
+            var rgba_setting = "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
+            $("#rgba-room").css("background-color", rgba_setting);
+        }
+
+        $("#txt").on('input', () => {
+            $("#txting").text("You're typing:" + $("#txt").val());
+        })
+    </script>
+</body>
+
+</html>

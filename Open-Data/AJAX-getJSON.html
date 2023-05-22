@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2 class="m-3">課堂練習 $.getJSON</h2>
+    <table id="table" class="table table-info table-striped table-bordered table-hover ">
+        <tr>
+            <th>項目</th>
+            <th>金額</th>
+        </tr>
+    </table>
+
+    <script src="../jquery-source-code.js"></script>
+    <script>
+        const url = 'https://apiservice.mol.gov.tw/OdService/download/A17030000J-000022-UMA'
+
+        $.getJSON(url)
+            .done(function (data) {
+                // 印出所有資料
+                console.log(data);
+            })
+            .fail(err => {
+                alert("fail open api," + err)
+            });
+
+    </script>
+</body>
+
+</html>

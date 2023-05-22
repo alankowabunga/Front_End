@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile phone */
+.wrapper {
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #000000;
+}
+
+.header {
+    height: 15%;
+    background-color: #000000;
+    background-image: url(./images/mark01.jpg);
+    background-position: center right;
+    background-size: fill;
+    background-repeat: no-repeat;
+    
+    filter: blur(.15em);
+    transition: 500ms linear;
+}
+
+.header:hover {
+    filter: blur(0);
+    background-position: center;
+}
+
+.main {
+    height: 75%;
+    background-color: #9687de;
+}
+
+.content1 {
+    height: 25%;
+    background-color: #393939;
+    background-image: url(./images/Rolex-Submariner-01.webp);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color:#ffffff;
+}
+
+.content1 p{
+    margin:1em;
+    font-weight:bold;
+    color: #d0e7ff;
+    opacity:0;
+    transition:600ms linear;
+}
+
+.content1:hover p{
+    opacity: 1;
+    backdrop-filter: blur(.5em);
+}
+
+.content2 {
+    height: 25%;
+    background-color: #f6eaea;
+    background-image: url(./images/Rolex-GMT-Master-2.webp);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.content2 p{
+    margin:1.5em;
+    font-weight:bold;
+    color: #432800;
+    opacity:0;
+    transition:800ms linear;
+}
+
+.content2:hover p{
+    opacity: 1;
+    backdrop-filter: blur(10px);
+}
+.content3 {
+    height: 25%;
+    background-color: #e7eef3;
+    background-image: url(./images/Rolex-GMT-Master-03.webp);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.content3 p{
+    margin:1.5em;
+    font-weight:bold;
+    color: #8d0505;
+    opacity:0;
+    transition:800ms linear;
+}
+
+.content3:hover p{
+    opacity: 1;
+    backdrop-filter: blur(.8em);
+}
+
+.content4 {
+    height: 25%;
+    background-color: #f1fae1;
+    background-image: url(./images/Rolex-GMT-Master-04.webp);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.content4 p{
+    margin:1.5em;
+    font-weight:bold;
+    color: #11068a;
+    opacity:0;
+    transition:800ms linear;
+}
+
+.content4:hover p{
+    opacity: 1;
+    backdrop-filter: blur(.8em);
+}
+.footer {
+    height: 10%;
+    width: 100%;
+    background-color: #977427;
+    background-image: url(./images/mark02.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Pad */
+@media screen and (min-width:480px)and (max-width:1080px) {
+    .content1 {
+        height: 50%;
+        width: 50%;
+        float: left;
+    }
+
+    .content2 {
+        height: 50%;
+        width: 50%;
+        float: left;
+    }
+
+    .content3 {
+        height: 50%;
+        width: 50%;
+        float: left;
+    }
+
+    .content4 {
+        height: 50%;
+        width: 50%;
+        float: left;
+    }
+}
+
+/* PC */
+@media screen and (min-width:1080px) {
+    .content1 {
+        height: 100%;
+        width: 25%;
+        float: left;
+    }
+
+    .content2 {
+        height: 100%;
+        width: 25%;
+        float: left;
+    }
+
+    .content3 {
+        height: 100%;
+        width: 25%;
+        float: left;
+    }
+
+    .content4 {
+        height: 100%;
+        width: 25%;
+        float: left;
+    }
+}

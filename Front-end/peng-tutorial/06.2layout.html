@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>Flexbox 網頁切版</title>
+        <link rel="stylesheet" type="text/css" href="06.0layout.css"/>
+    </head>
+    <body>
+        <div class="frame">
+            <div class="left">Left width:30%</div>
+            <div class="right">Right width:70%</div>
+        </div>
+        <div class="frame">
+            <div class="left2">Left width: 300px</div>
+            <div class="right2">Right flex:auto</div>
+        </div>
+        <div class="frame">
+            <div class="left2">再 right2 下一層建立三個項目 item</div>
+            <div class="right2">
+                <div class="item">其容器是right2，而非frame所以並沒有承襲水平排列</div>
+                <div class="item">其容器是right2，而非frame所以並沒有承襲水平排列</div>
+                <div class="item">其容器是right2，而非frame所以並沒有承襲水平排列</div>
+            </div>
+        </div>
+    </body>
+</html>
