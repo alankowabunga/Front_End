@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Assignment</title>
+</head>
+<body>
+    <script>
+        /* 
+        解構賦值:將一個陣列或物件中的元素解構出來，，並放入變數裡，以便進行後續操作
+        */
+
+        // 1. 解構陣列
+        const numbers = [1,2,3];
+        const [a,b,c] = numbers; // const [a,b,c] 為 解構 的宣告
+        console.log(a); 
+        
+        // 2. 解構物件 --> 解構賦值的變數名稱應當與物件中的屬性名稱相同!!
+        const person = {name:"Alan",age:26};
+        const {name,y}=person;
+        console.log(name);
+
+    //3. 陣列的值從參數帶進來，然後再用解構賦值
+        function destructure(x,y,z){
+            // var array = [x,y,z];
+            // var [xx,yy,zz]=array;
+            var [xx,yy,zz]=[x,y,z];
+
+            console.log(xx+yy+zz); // 6
+        }
+        destructure(1,2,3);
+    </script>
+</body>
+</html>
