@@ -6,31 +6,23 @@
   align-items: center;
 }
 .container.plain .f {
-  font-size: 4em;
+  font-size: 3em;
   text-shadow: 0 0 0.05em white;
-  color: rgb(243, 238, 238);
-  font-weight: bolder;
   margin-left: 0.1em;
 }
 .container.plain .l {
-  font-weight: bolder;
-  font-size: 4em;
+  font-size: 3em;
   text-shadow: 0 0 0.05em white;
-  color: rgb(246, 237, 237);
   margin-left: 0.1em;
 }
 .container.plain .i {
-  font-weight: bolder;
-  font-size: 4em;
+  font-size: 3em;
   text-shadow: 0 0 0.05em white;
-  color: rgb(247, 228, 228);
   margin-left: 0.1em;
 }
 .container.plain .p {
-  font-weight: bolder;
-  font-size: 4em;
+  font-size: 3em;
   text-shadow: 0 0 0.05em white;
-  color: rgb(255, 233, 233);
   margin-left: 0.1em;
 }
 .container.plain .for {
@@ -40,17 +32,12 @@
   display: none;
 }
 
-.container {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 .container.column {
   height: 100vh;
   width: 100vw;
-  color: black;
   display: flex;
+  padding: 0;
+  margin: 0;
 }
 .container.column .f {
   height: 100vh;
@@ -106,6 +93,8 @@
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  padding: 0;
+  margin: 0;
 }
 .container.grid .f {
   background-color: #4a3aa1;
@@ -156,10 +145,13 @@
   box-sizing: border-box;
 }
 
+.container {
+  background-color: #232121;
+}
+
 .container.final {
   height: 100vh;
   width: 100vw;
-  color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,7 +160,6 @@
   height: 4.5em;
   width: 2em;
   font-size: 3em;
-  color: black;
   border-radius: 10px;
   background-color: #4a3aa1;
   display: flex;
@@ -181,7 +172,6 @@
   height: 4.5em;
   width: 2em;
   font-size: 3em;
-  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -193,7 +183,6 @@
   width: 2em;
   font-weight: bolder;
   font-size: 3em;
-  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,7 +194,6 @@
   width: 2em;
   font-weight: bolder;
   font-size: 3em;
-  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -220,4 +208,16 @@
 .container.final .gsap {
   font-size: 2em;
   text-shadow: 0 0 1em whitesmoke;
+}
+
+.letter {
+  color: black;
+}
+
+.container.plain .letter {
+  color: aliceblue;
+}
+
+.for, .gsap {
+  color: aliceblue;
 }/*# sourceMappingURL=flip.css.map */

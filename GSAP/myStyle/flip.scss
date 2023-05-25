@@ -9,11 +9,12 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+.container{
+    background-color: #232121;
+}
 .container.final {
     height: 100vh;
     width: 100vw;
-    color: aliceblue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +23,6 @@
         height: 4.5em;
         width: 2em;
         font-size: 3em;
-        color:black;
         border-radius: 10px;
         background-color: #4a3aa1;
         display: flex;
@@ -36,7 +36,6 @@
         height: 4.5em;
         width: 2em;
         font-size: 3em;
-        color:black;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -49,7 +48,6 @@
         width: 2em;
         font-weight: bolder;
         font-size: 3em;
-        color:black;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -62,7 +60,6 @@
         width: 2em;
         font-weight: bolder;
         font-size: 3em;
-        color:black;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -80,4 +77,13 @@
         font-size: 2em;
         text-shadow:0 0 1em whitesmoke;
     }
+}
+.letter{
+    color:black;
+}
+.container.plain .letter{
+    color:aliceblue;
+}
+.for, .gsap{
+    color:aliceblue;
 }

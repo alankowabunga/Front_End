@@ -1,14 +1,9 @@
-.container {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 .container.column {
   height: 100vh;
   width: 100vw;
-  color: black;
   display: flex;
+  padding: 0;
+  margin: 0;
 }
 .container.column .f {
   height: 100vh;

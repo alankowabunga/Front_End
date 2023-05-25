@@ -1,21 +1,15 @@
-.container{
-    padding:0;
-    margin:0;
-    box-sizing: border-box;
-}
 
 .container.column {
     height: 100vh;
     width: 100vw;
-    color: black;
     display: flex;
+    padding:0;
+    margin:0;
 
     .f {
         height: 100vh;
         width: 25vw;
         font-size: 3em;
-
-
         background-color: #4a3aa1;
         display: flex;
         justify-content: center;
@@ -28,11 +22,9 @@
         height: 100vh;
         width: 25vw;
         font-size: 3em;
-
         display: flex;
         justify-content: center;
         align-items: center;
-
         background-color: #4ba7e0;
     }
 
@@ -41,12 +33,10 @@
         width: 25vw;
         font-weight: bolder;
         font-size: 3em;
-
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: #ab4ebc;
-
     }
 
     .p {
@@ -54,12 +44,10 @@
         width: 25vw;
         font-weight: bolder;
         font-size: 3em;
-
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: #c7376e;
-
     }
 
     .for {
