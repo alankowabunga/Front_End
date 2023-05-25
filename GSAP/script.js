@@ -10,7 +10,6 @@ timeline
     .from('.box',{opacity:0,scale:.6,duration:1,stagger:{from:'random',
     each:0.1}},'<')
     .fromTo('.button',{scale:0,rotate:720,opacity:0},{scale:1,rotate:0,opacity:1},'<.5')
-
     // 倒轉
 var button = document.querySelector('.button');
 button.addEventListener('click',()=>{

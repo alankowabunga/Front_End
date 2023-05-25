@@ -36,7 +36,7 @@ var small = document.querySelector('.thumbNail'), big = document.querySelector('
 document.querySelector('.size-btn').addEventListener('click', () => {
 
     // 在變換之前就要把狀態儲存起來
-    const state = Flip.getState('.thumbNail');
+    const state = Flip.getState('.thumbNail,.full-size');
 
     small.classList.toggle("inActive");
     big.classList.toggle("inActive");
