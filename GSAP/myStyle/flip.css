@@ -8,22 +8,18 @@
 .container.plain .f {
   font-size: 3em;
   text-shadow: 0 0 0.05em white;
-  margin-left: 0.1em;
 }
 .container.plain .l {
   font-size: 3em;
   text-shadow: 0 0 0.05em white;
-  margin-left: 0.1em;
 }
 .container.plain .i {
   font-size: 3em;
   text-shadow: 0 0 0.05em white;
-  margin-left: 0.1em;
 }
 .container.plain .p {
   font-size: 3em;
   text-shadow: 0 0 0.05em white;
-  margin-left: 0.1em;
 }
 .container.plain .for {
   display: none;
@@ -157,9 +153,9 @@
   align-items: center;
 }
 .container.final .f {
-  height: 4.5em;
+  height: 4em;
   width: 2em;
-  font-size: 3em;
+  font-size: 2.8em;
   border-radius: 10px;
   background-color: #4a3aa1;
   display: flex;
@@ -169,9 +165,9 @@
 }
 .container.final .l {
   font-weight: bolder;
-  height: 4.5em;
+  height: 4em;
   width: 2em;
-  font-size: 3em;
+  font-size: 2.8em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -179,10 +175,10 @@
   background-color: #4ba7e0;
 }
 .container.final .i {
-  height: 4.5em;
+  height: 4em;
   width: 2em;
   font-weight: bolder;
-  font-size: 3em;
+  font-size: 2.8em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -190,10 +186,10 @@
   border-radius: 10px;
 }
 .container.final .p {
-  height: 4.5em;
+  height: 4em;
   width: 2em;
   font-weight: bolder;
-  font-size: 3em;
+  font-size: 2.8em;
   display: flex;
   justify-content: center;
   align-items: center;

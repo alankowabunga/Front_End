@@ -6,22 +6,17 @@
   align-items: center;
 }
 .container.plain .f {
-  font-size: 3em;
   text-shadow: 0 0 0.05em white;
-  margin-left: 0.1em;
 }
 .container.plain .l {
-  font-size: 3em;
   text-shadow: 0 0 0.05em white;
   margin-left: 0.1em;
 }
 .container.plain .i {
-  font-size: 3em;
   text-shadow: 0 0 0.05em white;
   margin-left: 0.1em;
 }
 .container.plain .p {
-  font-size: 3em;
   text-shadow: 0 0 0.05em white;
   margin-left: 0.1em;
 }
