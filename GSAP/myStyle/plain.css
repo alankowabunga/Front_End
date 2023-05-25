@@ -1,0 +1,41 @@
+.container.plain {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container.plain .f {
+  font-size: 4em;
+  text-shadow: 0 0 0.05em white;
+  color: rgb(243, 238, 238);
+  font-weight: bolder;
+  margin-left: 0.1em;
+}
+.container.plain .l {
+  font-weight: bolder;
+  font-size: 4em;
+  text-shadow: 0 0 0.05em white;
+  color: rgb(246, 237, 237);
+  margin-left: 0.1em;
+}
+.container.plain .i {
+  font-weight: bolder;
+  font-size: 4em;
+  text-shadow: 0 0 0.05em white;
+  color: rgb(247, 228, 228);
+  margin-left: 0.1em;
+}
+.container.plain .p {
+  font-weight: bolder;
+  font-size: 4em;
+  text-shadow: 0 0 0.05em white;
+  color: rgb(255, 233, 233);
+  margin-left: 0.1em;
+}
+.container.plain .for {
+  display: none;
+}
+.container.plain .gsap {
+  display: none;
+}/*# sourceMappingURL=plain.css.map */
