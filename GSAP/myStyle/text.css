@@ -1,0 +1,29 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ecadad;
+}
+.container{
+    height:100vh;
+    width:100vw;
+    display: grid;
+    place-items: center;
+    padding:2em;
+    clip-path: polygon(51% 33%, 99% 31%, 98% 45%, 100% 70%, 48% 68%, 30% 71%, 0 70%, 4% 42%, 0 27%);
+}
+.text{
+    text-transform: uppercase;
+    font-size:2em;
+    line-height:7.9rem;
+}
+.button-group{
+    position:absolute;
+    top:10%;
+    left:15%;
+}
+button{
+    margin:1em;
+}
