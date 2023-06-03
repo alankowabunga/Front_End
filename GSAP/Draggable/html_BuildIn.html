@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build-In method</title>
+    <style>
+        body{
+            height:100vh;
+            background-color: #fbb3b3;
+            flex-direction: column;
+            display:flex;
+            justify-content: center;
+        }
+        #box1,#box2{
+            border:2px solid black;
+            height:190px;
+            width:240px;
+            padding:10px;
+        }
+        #box2{
+            transform: translateX(110%);
+        }
+    </style>
+        
+</head>
+<body>
+    <h1>Drag and Drop</h1>
+    <h3>Drag the image back and forth between the two div elements.</h3>
+
+    <div id="box1" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <img src="https://fakeimg.pl/230x180/200" id="myImg" draggable="true" ondragstart="startDragging(event)">
+    </div>
+    <div id="box2" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+
+    <script>
+        function startDragging(e){
+            console.log("e.target.id: ",e.target.id);
+            e.dataTransfer.setData("id",e.target.id);
+
+        }
+        function allowDrop(e){
+            e.preventDefault();
+        }
+        function drop(e){
+            e.preventDefault();
+            console.log("確認目標容器抓得到 getData:",e.dataTransfer.getData("id"));
+
+            var data = e.dataTransfer.getData("id");
+            e.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+</html>

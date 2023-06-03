@@ -28,17 +28,22 @@
             cursor: move;
         }
 
-        .draggable.dragging {
+        .box.dragging {
             opacity: .5;
+        }
+        span{
+            color:aliceblue;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="containerA">
+        <span>No.1 Container</span>
         <p class="box" draggable="true">1</p>
         <p class="box" draggable="true">2</p>
       </div>
-      <div class="container">
+      <div class="container" id="containerB">
+        <span>No.2 Container</span>
         <p class="box" draggable="true">3</p>
         <p class="box" draggable="true">4</p>
       </div>
