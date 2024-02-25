@@ -1,7 +1,7 @@
-let generalTask = ''; //注意/交辦事項
-let generalAOB = ''; //共同
-let allIssue = '';
-let AOB = ''; //個人
+let generalTask = ""; //注意/交辦事項
+let generalAOB = ""; //共同
+let allIssue = "";
+let AOB = ""; //個人
 
 function generateReport() {
   /* 
@@ -9,23 +9,21 @@ function generateReport() {
   2. 整理  [注意/交辦事項] & [其他]
   3. 全部組成 report
   */
-  var rows = document.querySelectorAll('.row');
-  formGeneralTaskAndAOB(rows);
-  formIssueAndOther(rows);
+  formIssueAndOther();
+  formGeneralTaskAndAOB();
   formReport();
   resetIssueAndOther();
 }
 
 formReport = () => {
-  let report = '{{toc}}\n\n# 議題\n\n';
+  let report = "{{toc}}\n\n# 議題\n\n";
   report += allIssue;
-  report += '## 注意/交辦事項\n';
+  report += "## 注意/交辦事項\n";
   report += generalTask;
-  report += '\n---\n\n\n';
-  report += '# 其他\n';
+  report += "\n---\n\n\n";
+  report += "# 其他\n";
   report += generalAOB;
   report += AOB;
-  console.log('report', report);
   createAndDownloadFile(report, getFilename());
 };
 
@@ -39,18 +37,25 @@ getFilename = () => {
   var year = currentDate.getFullYear();
 
   // 將日期部分組合成字串
-  var formattedDate = year + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
+  var formattedDate =
+    year +
+    "-" +
+    (month < 10 ? "0" : "") +
+    month +
+    "-" +
+    (day < 10 ? "0" : "") +
+    day;
 
   return `${formattedDate}_會議紀錄`;
 };
 
 createAndDownloadFile = (content, filename) => {
-  console.log('content', content);
+  console.log("content", content);
   // 創建 Blob 對象
-  var blob = new Blob([content], { type: 'text/plain' });
+  var blob = new Blob([content], { type: "text/plain" });
 
   // 創建下載連結
-  var link = document.createElement('a');
+  var link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
   link.download = filename;
 
@@ -64,65 +69,65 @@ createAndDownloadFile = (content, filename) => {
   document.body.removeChild(link);
 };
 
-formGeneralTaskAndAOB = (rows) => {
-  rows.forEach((row, index) => {
-    if (index == 0) {
-      let general_task = row.querySelector('.general-task').value.split('\n');
-      let general_aob = row.querySelector('.general-aob').value.split('\n');
+formGeneralTaskAndAOB = () => {
+  let general_task = document.querySelector("#general-task").value.split("\n");
+  let general_aob = document.querySelector("#general-aob").value.split("\n");
 
-      general_task.forEach((task) => {
-        if (task == '') {
-          return;
-        }
-        generalTask += `+ ${task}\n`;
-      });
-      general_aob.forEach((other) => {
-        if (other == '') {
-          return;
-        }
-        generalAOB += `+ ${other}\n`;
-      });
+  general_task.forEach((task) => {
+    if (task == "") {
+      return;
     }
+    generalTask += `+ ${task}\n`;
+  });
+  general_aob.forEach((other) => {
+    if (other == "") {
+      return;
+    }
+    generalAOB += `+ ${other}\n`;
   });
 };
 
-formIssueAndOther = (rows) => {
-  rows.forEach(function (row, index) {
-    console.log('index', index);
-    // 使用特定命名規則構建 person 元素的類名
-    if (index == 0) {
+formIssueAndOther = () => {
+  let cols = document.querySelectorAll("#issue-block .col");
+  cols.forEach(function (col, index) {
+    console.log("@ index >>" + index);
+    if (index >= cols.length - 1) {
       return;
     }
-    var className = 'person' + index;
-    console.log('className', className);
-    var issue = 'issue' + index;
-    var other = 'other' + index;
+    var className = "person" + (index + 1);
+    var issue = "issue" + (index + 1);
+    var other = "other" + (index + 1);
+    console.log("className", className);
 
     //name
-    var personName = row.querySelector(`.${className}`).value;
+    var personName = col.querySelector(`.${className}`).value;
     //issue
-    var issueValue = row.querySelector(`.${issue}`).value.split('\n');
+    var issueValue = col.querySelector(`.${issue}`).value.split("\n");
     //other
-    var otherValue = row.querySelector(`.${other}`).value.split('\n').join('、');
+    var otherValue = col
+      .querySelector(`.${other}`)
+      .value.split("\n")
+      .join("、");
 
     //製作 issue & other
     allIssue += `### ${personName}\n`;
     issueValue.forEach((issue) => {
-      if (issue == '') {
+      if (issue == "") {
         return;
       }
       allIssue += `+ ${issue}\n`;
     });
 
+    allIssue += "\n\n";
     AOB += `+ (${personName}) ${otherValue}\n`;
   });
-  allIssue += '\n\n';
 };
 
 resetIssueAndOther = () => {
-  report = '';
-  allIssue = '';
-  AOB = '';
-  generalAOB = '';
-  generalTask = '';
+  report = "";
+  allIssue = "";
+  AOB = "";
+  generalAOB = "";
+  generalTask = "";
 };
+
