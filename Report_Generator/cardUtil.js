@@ -2,7 +2,7 @@ addNewPerson = () => {
   let issueBlock = document.querySelector('#issue-block');
   let colNumber = document.querySelectorAll('#issue-block .col').length;
 
-  // 創建新的 .col 節點
+  // 創建新的 .col 節點(若全部直接用 innerHTML 會將原有的節點全部刷新)
   let newCol = document.createElement('div');
   newCol.className = 'col';
 
