@@ -6,7 +6,7 @@ let AOB = ''; //個人
 function generateReport() {
   /* 
   1. 組合 issue & other
-  2. 整理  [注意/交辦事項] & [其他]
+  2. 整理  [處理事項] & [其他]
   3. 全部組成 report
   */
   formIssueAndOther();
