@@ -1,10 +1,10 @@
 addNewPerson = () => {
-  let issueBlock = document.querySelector("#issue-block");
-  let colNumber = document.querySelectorAll("#issue-block .col").length;
+  let issueBlock = document.querySelector('#issue-block');
+  let colNumber = document.querySelectorAll('#issue-block .col').length;
 
   // 創建新的 .col 節點
-  let newCol = document.createElement("div");
-  newCol.className = "col";
+  let newCol = document.createElement('div');
+  newCol.className = 'col';
 
   newCol.innerHTML = getNewColHTML(colNumber);
 
@@ -13,12 +13,9 @@ addNewPerson = () => {
 
 getNewColHTML = (colNumber) => {
   return `
-  <div class="col">
     <div class="card border-primary mb-3" style="max-width: 18rem">
       <div class="card-header d-flex flex-row">
-        <h5 class="me-2">姓名: </h5><input type="text" class="form-control form-control-sm w-50 person${
-          colNumber + 1
-        }">
+        <h5 class="me-2">姓名: </h5><input type="text" class="form-control form-control-sm w-50 person${colNumber + 1}">
       </div>
 
       <div class="card-body text-dark">
@@ -29,7 +26,6 @@ getNewColHTML = (colNumber) => {
         <textarea class="form-control mb-3 other${colNumber + 1}"></textarea>
       </div>
     </div>
-  </div>
 `;
 };
 
@@ -40,7 +36,7 @@ clearAllPerson = () => {
 };
 
 keepFirstPerson = () => {
-  var cols = document.querySelectorAll("#issue-block .col");
+  var cols = document.querySelectorAll('#issue-block .col');
   for (var i = 1; i < cols.length; i++) {
     cols[i].parentNode.removeChild(cols[i]);
   }
@@ -48,14 +44,15 @@ keepFirstPerson = () => {
 
 resetAllInput = () => {
   // 清空 id 為 "myTextarea" 的 textarea 的值
-  document.querySelector("#general-task").value = "";
-  document.querySelector("#general-aob").value = "";
-  document.querySelector(".issue1").value = "";
-  document.querySelector("#other1").value = "";
+  document.querySelector('#general-task').value = '';
+  document.querySelector('#general-aob').value = '';
+  document.querySelector('.person1').value = '';
+  document.querySelector('.issue1').value = '';
+  document.querySelector('.other1').value = '';
 
   // 清空 class 為 "myInput" 的 input 的值
-  var inputs = document.querySelectorAll("input");
+  var inputs = document.querySelectorAll('input');
   inputs.forEach(function (input) {
-    input.value = "";
+    input.value = '';
   });
 };
