@@ -18,7 +18,7 @@ function generateReport() {
 formReport = () => {
   let report = '{{toc}}\n\n# 議題\n\n';
   report += allIssue;
-  report += '## 注意/交辦事項\n';
+  report += '## 處理事項\n';
   report += generalTask;
   report += '\n---\n\n\n';
   report += '# 其他\n';
@@ -71,7 +71,8 @@ formGeneralTaskAndAOB = () => {
     if (task == '') {
       return;
     }
-    generalTask += `+ ${task}\n`;
+    //TODO: 昱任改輸入值
+    generalTask += `+ (昱任) ${task}\n`;
   });
   general_aob.forEach((other) => {
     if (other == '') {

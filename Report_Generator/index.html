@@ -31,7 +31,12 @@
       <!-- 注意/交辦事項 : row index 0 -->
       <div class="row w-100 my-4 border border-1 border-success rounded p-2 bg-light">
         <div class="col">
-          <h5>注意/交辦事項</h5>
+          <div class="d-flex mb-2">
+            <h5 class="w-25">處理事項</h5>
+            <span>(處理人員): </span>
+            <input type="text" id="task-operator" class="form-control form-control-sm w-25 mx-2" />
+          </div>
+
           <textarea class="form-control" id="general-task"></textarea>
         </div>
         <div class="col">
