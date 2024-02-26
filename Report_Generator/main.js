@@ -1,7 +1,8 @@
-let generalTask = ''; //注意/交辦事項
-let generalAOB = ''; //共同
-let allIssue = '';
-let AOB = ''; //個人
+let modalContent = "";
+let generalTask = ""; //注意/交辦事項
+let generalAOB = ""; //共同
+let allIssue = "";
+let AOB = ""; //個人
 
 function generateReport() {
   /* 
@@ -16,16 +17,44 @@ function generateReport() {
 }
 
 formReport = () => {
-  let report = '{{toc}}\n\n# 議題\n\n';
+  let taskHandler = document.querySelector("#task-handler").value;
+  let name = taskHandler == "" ? "昱任" : taskHandler;
+
+  let report = "{{toc}}\n\n# 議題\n\n";
   report += allIssue;
-  report += '## 處理事項\n';
+  report += "## 處理事項\n";
+  report += `>  ( ${name} )\n`;
   report += generalTask;
-  report += '\n---\n\n\n';
-  report += '# 其他\n';
+  report += "\n---\n\n\n";
+  report += "# 其他\n";
   report += generalAOB;
   report += AOB;
-  console.log('report >>\n', report);
-  // createAndDownloadFile(report, getFilename());
+
+  setModalContent(report);
+  handleModal(report);
+  resetIssueAndOther();
+};
+
+handleModal = (report) => {
+  addModalContent(report);
+  showModal();
+};
+
+copyContent = () => {
+  navigator.clipboard.writeText(getModalContent());
+};
+
+addModalContent = (report) => {
+  report = report.replace(/\n/g, "<br>"); // 將 \n 替換為 <br> 標籤
+  $("#modalBody").html(report);
+};
+
+showModal = () => {
+  $("#myModal").modal("show");
+};
+
+closeModal = () => {
+  $("#myModal").modal("hide");
 };
 
 getFilename = () => {
@@ -38,18 +67,24 @@ getFilename = () => {
   var year = currentDate.getFullYear();
 
   // 將日期部分組合成字串
-  var formattedDate = year + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
+  var formattedDate =
+    year +
+    "-" +
+    (month < 10 ? "0" : "") +
+    month +
+    "-" +
+    (day < 10 ? "0" : "") +
+    day;
 
   return `${formattedDate}_會議紀錄`;
 };
 
 createAndDownloadFile = (content, filename) => {
-  console.log('content', content);
   // 創建 Blob 對象
-  var blob = new Blob([content], { type: 'text/plain' });
+  var blob = new Blob([content], { type: "text/plain" });
 
   // 創建下載連結
-  var link = document.createElement('a');
+  var link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
   link.download = filename;
 
@@ -64,18 +99,18 @@ createAndDownloadFile = (content, filename) => {
 };
 
 formGeneralTaskAndAOB = () => {
-  let general_task = document.querySelector('#general-task').value.split('\n');
-  let general_aob = document.querySelector('#general-aob').value.split('\n');
+  let general_task = document.querySelector("#general-task").value.split("\n");
+  let general_aob = document.querySelector("#general-aob").value.split("\n");
 
   general_task.forEach((task) => {
-    if (task == '') {
+    if (task == "") {
       return;
     }
-    //TODO: 昱任改輸入值
-    generalTask += `+ (昱任) ${task}\n`;
+
+    generalTask += `+ ${task}\n`;
   });
   general_aob.forEach((other) => {
-    if (other == '') {
+    if (other == "") {
       return;
     }
     generalAOB += `+ ${other}\n`;
@@ -83,45 +118,54 @@ formGeneralTaskAndAOB = () => {
 };
 
 formIssueAndOther = () => {
-  let cols = document.querySelectorAll('#issue-block .col');
+  let cols = document.querySelectorAll("#issue-block .col");
   cols.forEach(function (col, index) {
-    var className = 'person' + (index + 1);
-    var issue = 'issue' + (index + 1);
-    var other = 'other' + (index + 1);
-    console.log('className', className);
+    var className = "person" + (index + 1);
+    var issue = "issue" + (index + 1);
+    var other = "other" + (index + 1);
 
     //name
     var personName = col.querySelector(`.${className}`).value;
     //issue
-    var issueValue = col.querySelector(`.${issue}`).value.split('\n');
-    console.log('issueValue', issueValue);
+    var issueValue = col.querySelector(`.${issue}`).value.split("\n");
     //other
-    var otherValue = col.querySelector(`.${other}`).value.split('\n').join('、');
+    var otherValue = col
+      .querySelector(`.${other}`)
+      .value.split("\n")
+      .join("、");
 
     //製作 issue & other
-    if (issueValue[0].trim() !== '') {
+    if (issueValue[0].trim() !== "") {
       allIssue += `### ${personName}\n`;
     }
     issueValue.forEach((issue) => {
-      console.log('issue', issue);
-      if (issue == '') {
+      console.log("issue", issue);
+      if (issue == "") {
         return;
       }
       allIssue += `+ ${issue}\n`;
     });
 
-    allIssue += '\n\n';
+    allIssue += "\n\n";
 
-    if (otherValue != '') {
+    if (otherValue != "") {
       AOB += `+ (${personName}) ${otherValue}\n`;
     }
   });
 };
 
+setModalContent = (content) => {
+  modalContent = content;
+};
+
+getModalContent = () => {
+  return modalContent;
+};
+
 resetIssueAndOther = () => {
-  report = '';
-  allIssue = '';
-  AOB = '';
-  generalAOB = '';
-  generalTask = '';
+  report = "";
+  allIssue = "";
+  AOB = "";
+  generalAOB = "";
+  generalTask = "";
 };
