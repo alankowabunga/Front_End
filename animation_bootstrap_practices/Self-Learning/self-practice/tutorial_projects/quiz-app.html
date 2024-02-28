@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Quiz App</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 1.4em;
+        }
+
+        :root {
+            /* 利用改變 hsl(變數) 變數的數值，使產生顏色變化 */
+            --hue-neutral: 200;
+            --hue-wrong: 0;
+            --hue-correct: 145;
+            --bg: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+        }
+
+        body {
+            --hue: var(--hue-neutral);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: hsl(var(--hue), 100%, 20%);
+        }
+
+        body.correct {
+            --hue: var(--hue-correct);
+        }
+
+        body.wrong {
+            --hue: var(--hue-wrong);
+        }
+
+        .question {
+            font-size: 5em;
+            color: aliceblue;
+        }
+
+        .container {
+            background-image: var(--bg);
+            border-radius: 10px;
+            padding: 1em;
+            box-shadow: 0 0 10px 2px;
+        }
+
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            /* 意思是 我們要創造 2 個 columns，寬設定為 auto  */
+            gap: 10px;
+        }
+        .btn.correct {
+            --hue: var(--hue-correct);
+            background-color: hsl(var(--hue-correct), 100%, 40%);
+        }
+
+        .btn.wrong {
+            --hue: var(--hue-wrong);
+            background-color: hsl(var(--hue-wrong), 100%, 40%);
+            color: white;
+        }
+
+        .start-btn,
+        .next-btn {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .hide {
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <div class='hide' id='question-container'> <!-- 放問題的容器，開始之前會隱藏 -->
+
+            <div id='question-space'>Question Space</div> <!-- 拿來放題目的地方:會運用到 innerText 來更改文字 -->
+            <div class="btn-grid" id='answer-buttons'>
+                <button class="btn btn-lg btn-outline-dark mt-4">Answer 1</button>
+                <button class="btn btn-lg btn-outline-dark mt-4">Answer 2</button>
+                <button class="btn btn-lg btn-outline-dark mt-4">Answer 3</button>
+                <button class="btn btn-lg btn-outline-dark mt-4">Answer 4</button>
+            </div>
+
+            <button id="next-btn" class="next-btn btn btn-lg btn-warning mt-3">Next</button>
+        </div>
+
+
+        <div class="controls mt-4">
+            <button id='start-btn' class="start-btn btn btn-lg btn-info">Start</button>
+        </div>
+
+    </div>
+
+
+    <script src="js/jquery-source-code.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        const startButton = document.getElementById('start-btn');
+        const nextButton=document.getElementById('next-btn');
+        const qContainerElem = document.getElementById('question-container');
+        const questionElem = document.getElementById('question-space');
+        const answerBtnElem = document.getElementById('answer-buttons');
+        
+        // 將 classList 新增、移除會用到的 classes先建立陣列，使用語法: Element.classList.add(...classes);
+        const classes=['btn','btn-lg','btn-outline-dark', 'mt-4']; //注意單引號內不能有任何空格
+        
+        let shuffledQ, currentQindex;
+        // 為了讓問題能隨機排序，因此我們宣告兩個變數(default value=undefined)
+        nextButton.addEventListener('click',function(){
+            currentQindex++;
+            setNextQuestion();
+        })
+        startButton.addEventListener('click', startGame);
+        function startGame() {
+            
+            // 遊戲開始後，隱藏 start button、顯示 問題介面。
+            // 稱加或移除 class -> hide，就可決定是否套用設定的 display:none
+            startButton.classList.add('hide');
+            qContainerElem.classList.remove('hide');
+            
+            shuffledQ = questions.sort(() => Math.random() - 0.5);
+            // 將儲存questions的陣列資料作隨機排序後，得到新排序 shuffledQ陣列。==>陣列.sort(compareFunction(){}) 方法用來重新排序陣列中的元素。正負數有不同排序法，Math.random() 會產生0-1之間的小數，再 -0.5就可得到為隨機的正負數
+
+            currentQindex = 0; //初始問題
+            
+            setNextQuestion();
+        };
+        
+        // !!注意順序，若重置函式resetState()放在添增新選項按鈕之後，那創造的新按鈕前就被全刪除了!!
+        function setNextQuestion() {
+
+            resetState();
+
+            showQ(shuffledQ[currentQindex]);  //參數為: 新排序的問題陣列[0] => 得到新問題 newQ
+        };
+        
+        function showQ(newQ) {  // newQ => questions陣列 sort重新排列
+
+            // 顯示題目
+            questionElem.innerText = newQ.question;
+            
+            // 新的答案選項按鈕: 抓取物件資料中的題目text資料(answer.text) -> 使用 forEach 迴圈使有幾個題目選項就增加幾個button、並為其新增屬性(例如:按鈕的文字、class屬性、dataset.correct屬性值設定為 true，以驗證答案是否正確)
+            newQ.answers.forEach(answer =>{
+                //DOM 節點的新增： createElement(tagName)
+                const button = document.createElement('button');
+                button.innerText=answer.text; //新增按鈕的文字
+                button.classList.add(...classes);
+                if(answer.correct==true){ 
+                    
+                    button.dataset.correct=answer.correct;
+                    // 如果取得的原選項資料設定為正確答案(correct:true)，則此新增的 button也要設定為正確的選項按鈕。
+                }
+                
+                answerBtnElem.appendChild(button); 
+                button.addEventListener('click',selectAnswer);
+                // 將新增的 button節點，添增在 buttons容器元素的最後
+            })
+        }
+        // 重置成初始狀態(將next button隱藏、刪除舊按鈕、背景色還原)
+        function resetState(){
+
+            clearStausClass(document.body); //背景色還原
+
+            nextButton.classList.add('hide'); //next button 隱藏
+
+
+            while(answerBtnElem.firstChild){ //刪除舊按鈕
+                // 此判斷式意思為: 當 answerBtnElem 還有任何子節點，就會執行此區程式碼
+                answerBtnElem.removeChild(answerBtnElem.firstChild);
+            }
+        }
+        function selectAnswer(e) { 
+            // e.target 就是觸發事件的element，也就是點擊的選項按鈕
+            const correct = e.target.dataset.correct;
+            setStatusClass(document.body,correct);  //背景 , 'true'
+
+            Array.from(answerBtnElem.children).forEach(button =>{
+                setStatusClass(button, button.dataset.correct) //按鈕 , 'true'
+                
+                // 設定背景、按鈕顏色: 分別將按鈕、背景的元素當作參數丟給 setStatusClass function去判斷設定。要用 Array.from() 方法先將htmlCollection 變成陣列型態才能使用 forEach 迴圈操作
+            })
+
+            if(questions.length>(currentQindex+1)){
+                //若還有題目:顯示 next button
+                nextButton.classList.remove('hide'); //click 選項按鈕後顯示 next button
+            }else{
+                //若沒有題目了:顯示 restart button
+                startButton.innerText='Restart';
+                startButton.classList.remove('hide');
+            }
+        };
+        function setStatusClass(element,correct){
+            // document.body 、 answerBtn.children 背景和每一個按鈕元件會被當作引數放入 element ，判斷後就會新增 class :correct or  wrong。which we already 在 css 設定好樣式。
+            if(correct){
+                element.classList.add('correct');
+            }else{
+                element.classList.add('wrong');
+            }
+        }
+        function clearStausClass(element){ //將背景色還原
+            element.classList.remove('correct');
+            element.classList.remove('wrong');
+        }
+        
+        // 將好幾個物件全部都記錄在一起，波浪括號是物件、大括號[] 是陣列，questions陣列裡的每一個物件資料都是獨立的題目。
+        const questions = [
+            {   
+                question: 'What is 2+2 ?',
+                answers: [
+                    { text: '4', correct: true },
+                    { text: '22', correct: false }
+                ]
+            },
+            {
+                question:'4 * 2 = ?',
+                answers:[
+                    {text:'3',correct:false},
+                    {text:'8',correct:true}
+                ]
+
+            },
+            {
+                question:'What does the cat say?',
+                answers:[
+                    {text:'meow',correct:true},
+                    {text:'dog',correct:false}
+                ]
+
+            },
+            {
+                question:'Who is Stronger',
+                answers:[
+                    {text:'chicken',correct:false},
+                    {text:'Superman',correct:true}
+                ]
+
+            }
+        ]
+    </script>
+</body>
+
+</html>

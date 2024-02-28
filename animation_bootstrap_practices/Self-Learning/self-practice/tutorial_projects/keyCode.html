@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height:100vh;
+            display:grid;
+            place-items: center;
+        }
+    </style>
+</head>
+
+<body class="bg-secondary">
+    <div>
+        <div class="key bg-warning-subtle fs-3">
+            Press any key to get the event KeyCode
+        </div>
+        <table class="table table-bordered table-hover table-striped- table-primary" id="insert" >
+            <tr>
+                <th>event.key</th>
+                <th>event.code</th>
+                <th>event.keyCode</th>
+            </tr>
+            <tr>
+                <td>鍵盤上的字</td>
+                <td>..</td>
+                <td>數字代碼</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="js/jquery-source-code.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        const insert = document.getElementById('insert');
+
+        window.addEventListener('keydown', (e) => {
+            console.log(e);
+            const { key, keyCode, code } = e;
+
+            insert.innerHTML = `
+            <tr>
+                <th>event.key</th>
+                <th>event.keyCode</th>
+                <th>event.code</th>
+            </tr>
+            <tr>
+                <td>${key}</td>
+                <td>${code}</td>
+                <td>${keyCode}</td>
+            </tr>
+            `;
+        })
+    </script>
+</body>
+
+</html>

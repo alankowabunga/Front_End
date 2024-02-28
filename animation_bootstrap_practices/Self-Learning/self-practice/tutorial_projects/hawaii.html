@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawaii Rental Website | The Best Rantal Service for Your Trip</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="hawai.css">
+</head>
+
+<body onload="run()">
+    <header>
+        <div class="logo">
+            <div class="img"></div>
+            <h3>Hawai Tourism Rental Service</h3>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="">Main Page</a></li>
+
+                <li><a href="">About Us</a></li>
+
+                <li><a href="">Log-In</a></li>
+
+                <li><a href="">Contact Us</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="filter">
+
+            <h2 data-txt="Start Your Journey Now" id="txt"></h2>
+            <button class="start btn btn-outline-warning btn-lg">Go</button>
+
+            <video autoplay loop muted>
+                <source src="images/sea-138588.mp4">
+            </video>
+        </div>
+    </main>
+
+    <section class="options">
+        <div class="slider">
+            <span style="--i:1"><img src="images/hawaii01.jpg" alt=""></span>
+            <span style="--i:2"><img src="images/hawaii02.jpeg" alt=""></span>
+            <span style="--i:3"><img src="images/hawaii03.jpg" alt=""></span>
+            <span style="--i:4"><img src="images/hawaii04.jpg" alt=""></span>
+            <span style="--i:5"><img src="images/hawaii05.jpg" alt=""></span>
+        </div>
+    </section>
+
+    <script>
+        // 取得element-> id 為 txt 的中的attribute屬性 -> data-txt
+        var txt = document.getElementById("txt");
+        var dataTxt = txt.getAttribute('data-txt');
+
+        // 利用setTimeOut 去達成類似迴圈的效果
+        var i = 0;
+        var txtspace = "";
+
+        function runningTxt() {
+
+            var ch = dataTxt.charAt(i);
+            txtspace += ch;
+            txt.innerText = txtspace;
+            i++;
+            var t = setTimeout(runningTxt,100);
+            if(i>dataTxt.length){
+                // 還原 1.儲存文字字串、2.i (index)、3. timeOut
+                clearTimeout(t);
+                txtspace="";
+                i=0;
+                setTimeout(run,3000);
+            }
+        }
+        function run(){
+            runningTxt();
+        }
+        
+
+    </script>
+</body>
+
+</html>

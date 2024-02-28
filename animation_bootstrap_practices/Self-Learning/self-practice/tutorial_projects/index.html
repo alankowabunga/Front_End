@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Moon</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        body {
+            background-color: #21233c;
+            min-height: 100vh;
+            width: 100vw;
+            padding-bottom: 3em;
+        }
+
+        .moon-container {
+            position: relative;
+            width: 30rem;
+            height: 30rem;
+            margin: 0 auto;
+            /* border:1px solid #e8e1e1; */
+        }
+
+        div p {
+            color: aliceblue;
+            font-size: 4rem;
+        }
+
+        p.letter-l {
+            position: absolute;
+            top: 45%;
+            left: -3%;
+        }
+
+        p.letter-k {
+            position: absolute;
+            top: 45%;
+            right: 0%;
+        }
+
+        p.letter-n {
+            position: absolute;
+            top: 45%;
+            right: 22%;
+        }
+
+        .moon {
+            width: 6.5rem;
+            height: 6.5rem;
+            /* border:1px solid #e6e6e6; */
+            position: absolute;
+            top: 43%;
+            left: 28%;
+            border-radius: 50%;
+            background-color: #f5f2f2;
+
+            box-shadow: 0 0 0 0.3em #e6e6e6,
+                0 0 0 0.6em #d5d4d4,
+                0 0 0 0.8em #b6b5b5,
+                0 0 5em 0.8em #979696;
+            animation: moon 2500ms linear forwards, rays 2200ms 2000ms linear infinite;
+        }
+
+        @keyframes moon {
+            0% {
+                box-shadow: none;
+            }
+        }
+
+        @keyframes rays {
+            0% {
+                box-shadow: 0 0 0 0.2em #e6e6e5,
+                    0 0 0 0.4em #d5d4d9,
+                    0 0 0 0.6em #b6b5b5,
+                    0 0 5em 0.6em #979696;
+            }
+
+            100% {
+                box-shadow: 0 0 0 0.3em #e6e6e6,
+                    0 0 0 0.6em #d5d4d4,
+                    0 0 0 0.8em #b6b5b5,
+                    0 0 5em 0.8em #979696;
+            }
+        }
+
+        .moon::before {
+            content: "";
+            display: block;
+            /* border:1px dotted #e6e6e7; */
+            background-color: #dad6d6;
+            width: .3rem;
+            height: .3rem;
+            position: absolute;
+            top: 3rem;
+            left: 1rem;
+            border-radius: 50%;
+            z-index: 4;
+            /* 月球上的肉球陰影 */
+            box-shadow: .4em 1em 0 .3em #dad6d6,
+                0.9em -.01em 0 0 #dad6d6,
+                1.4em .6em 0 0 #dad6d6;
+        }
+
+        .orbit {
+            position: relative;
+            width: 12rem;
+            height: 15rem;
+            /* border:1px solid white; */
+            top: 28%;
+            left: 18%;
+            border-radius: 50%;
+            /* O 是固定在 orbit 軌道上，animation設在 p 會變成自轉 ， 因此是要旋轉 orbit */
+            animation: revolve 6000ms ease-in infinite;
+        }
+
+        .orbit p {
+            display: block;
+            position: absolute;
+
+        }
+
+        @keyframes revolve {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header h1 {
+            color: white;
+            text-shadow: 0 0 1rem #e6e6e6;
+            transform: translateY(50px);
+        }
+
+        .container a {
+            color: #f5f2f2;
+            text-decoration: none;
+            transition: 300ms;
+            font-size: 1.2em;
+        }
+
+        .container a:hover {
+            font-size: 1.4em;
+            text-shadow: 0 0 1em #d5d4d4;
+        }
+
+        img {
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            transition: 150ms;
+        }
+
+        img:hover {
+            height: 30px;
+            width: 30px;
+        }
+
+        img:active {
+            height: 25px;
+            width: 25px;
+        }
+    </style>
+</head>
+
+<body onload="run()">
+    
+    <audio src="audios/button_click.mp3" id="submit_audio"></audio>
+    <audio src="audios/water_bubble.mp3" id="remove_audio"></audio>
+
+    <header>
+        <h1>陳昱任 09號</h1>
+    </header>
+    <div class="moon-container">
+        <p class="letter letter-l">L</p>
+        <div class="moon" ></div>
+        <div class="orbit">
+            <p>O</p>
+        </div>
+        <p class="letter letter-n">N</p>
+        <p class="letter letter-k">K</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4 mb-5  text text-center">
+                <label for="link_input" class="col-form-label text-white">請輸入檔名:</label>
+            </div>
+            <div class="col-4 mb-5">
+                <input type="text" id="link_input" class="form-control">
+            </div>
+            <div class="col-4 mb-5 d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-light" id="submit_btn">送出</button>
+            </div>
+        </div>
+
+        <h3 class="text-center bg-primary-subtle">Click Link to Visit Website</h3>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4" id="link_container">
+            <div class="col mt-4 d-flex justify-content-between bg-secondary">
+                <a href="form-drill.html" target="_blank">form-drill
+                </a>
+                <img src="images/cross.png" class="my-auto rm_btn">
+            </div>
+        </div>
+    </div>
+    <audio src="audios/"></audio>
+    <script src="js/jquery-source-code.js">
+    </script>
+    <script>
+        text = "要加副檔名喔";
+        placeHolder = "";
+        index = 0;
+
+        function runningTxt() {
+
+            var input = document.getElementById("link_input");
+
+            placeHolder += text.charAt(index);
+            input.setAttribute("placeholder", placeHolder);
+            index++;
+            var t = setTimeout(runningTxt, 200);
+
+            if (index > text.length) {
+                clearTimeout(t);
+                index = 0;
+                placeHolder = "";
+                setTimeout(run, 3000);
+            }
+        }
+
+        function run() {
+
+            runningTxt();
+        }
+        
+        var orbit=document.querySelector(".orbit");
+        orbit.addEventListener("click",bg_music);
+        // !! 把這個 function() 獨立定義出來 !!
+        function bg_music(){
+            const bg_audio = document.createElement("audio");
+            bg_audio.src="audios/coniferous-forest-142569.mp3";
+            bg_audio.loop=true;
+            bg_audio.volume=0.5;
+            bg_audio.play();
+            remove_bgm(); //未必免重覆誤觸，呼叫函式將點擊事件移除
+        }
+        function remove_bgm(){
+            orbit.removeEventListener("click",bg_music);
+        }
+
+        $("#submit_btn").on('click', () => {
+            var link = $("#link_input").val();
+            var dot_index = link.indexOf(".");
+            var result = "";
+            for (var i = 0; i < dot_index; i++) {
+                result += link.charAt(i);
+            }
+
+            if (link.includes(".")) {
+
+                $("#link_container").append(
+                    `
+                    <div class="col mt-4 d-flex justify-content-between bg-secondary">
+                        <a href="${link}" target="_blank" >${result}</a>
+                        <img src="images/cross.png" class="rm_btn my-auto ">
+                    </div>
+                    `
+                );
+                $("#link_input").val("");
+            } else {
+                alert("記得加副檔名喔");
+                $("#link_input").val("");
+            }
+
+            // 送出音效
+            const submit_audio = document.getElementById("submit_audio");
+            submit_audio.play();
+
+            // querySelectorAll() 方法返回的是一個類陣列對象，並不是真正的陣列。因此，您不能直接使用 forEach() 方法來遍歷它，但可以用 Array.from() 方法其轉換為真正的陣列後再使用 forEach() 方法。
+            var remove_btns = Array.from(document.querySelectorAll(".rm_btn"));
+            remove_btns.forEach(btn => {
+
+                console.log(btn);
+                btn.addEventListener('click', () => {
+                    console.log(this.parentNode);
+                    btn.parentNode.remove();
+
+                    const remove_audio = document.getElementById('remove_audio');
+                    remove_audio.play();
+
+                })
+            });
+        })
+        // 設定 enter 就是 點擊送出按鈕
+        window.addEventListener("keydown", (e) => {
+            console.log(e.keyCode);
+            if (e.keyCode == 13) {
+                document.getElementById("submit_btn").click();
+            }
+        })
+    </script>
+</body>
+
+</html>

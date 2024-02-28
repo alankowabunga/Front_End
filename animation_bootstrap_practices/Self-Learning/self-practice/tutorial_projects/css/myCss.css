@@ -1,0 +1,10 @@
+*,*::after,*::before{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.box{
+    padding:1em;
+    border: 2px solid darkblue;
+    border-radius: 5px;
+}
