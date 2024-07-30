@@ -1,0 +1,130 @@
+
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    background-image: url(./images/dark-universe.jpg);
+    object-fit:scale-down;
+    height: 100vh;
+    width:100vw;
+}
+
+.sun{
+    background-image:url(./images/太陽.webp);
+    background-size:139% ;
+    background-position: center;
+    border-radius:50%;
+
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    box-shadow:0 0 1.5rem .5rem rgb(255, 0, 0);
+    height:9rem;
+    width:9rem;
+}
+
+@keyframes revolve{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+.Venus-orbit{
+    height:13em;
+    width:17em;
+
+    position:absolute;
+    top:45%;
+    left:43%;
+    /* border:1px solid white; */
+    animation:revolve 15000ms ease-in-out infinite;
+}
+.Venus-orbit::before{
+    content:"";
+    height:2.5em;
+    width:2.5em;
+    background-image:url(./images/02金星.jpg);
+    background-position: center;
+    background-size: 155%;
+    border-radius: 50%;
+    position:absolute;
+    box-shadow: 0 0 1em .2em #f8bc63;
+}
+
+.Earth-orbit{
+    height:22em;
+    width:28em;
+
+    position:absolute;
+    top:35%;
+    left:35%;
+    /* border:1px solid white; */
+    animation:revolve 18000ms ease-in-out infinite;
+}
+.Earth-orbit::before{
+    content:"";
+    height:2.8em;
+    width:2.8em;
+    background-image:url(./images/03地球.jpg);
+    background-position: center;
+    background-size: 155%;
+    border-radius: 50%;
+    position:absolute;
+    box-shadow: 0 0 1em .2em #80cbfc;
+}
+
+.Moon-orbit{
+    height:6em;
+    width:6em;
+
+    /* border:1px solid white; */
+    border-radius: 50%;
+
+    position:relative;
+    top:-8%;
+    left:-7%;
+
+
+    animation:revolve 18000ms ease-in-out infinite;
+}
+.Moon-orbit::before{
+    content:"";
+    height:1.7em;
+    width:1.7em;
+    background-image:url(./images/月亮.png);
+    background-position: center;
+    background-size: 155%;
+    border-radius: 50%;
+    
+    position:absolute;
+    box-shadow: 0 0 1em .3em #c4ddee;
+}
+/* Mars-orbit */
+.Mars-orbit{
+    height:38em;
+    width:40em;
+
+    position:absolute;
+    top:20%;
+    left:20%;
+    /* border:1px solid rgb(219, 117, 117); */
+    animation:revolve 25000ms ease-in-out infinite;
+}
+.Mars-orbit::before{
+    content:"";
+    height:3em;
+    width:3em;
+    background-image:url(./images//04火星.jpg);
+    background-position: center;
+    background-size: 155%;
+    border-radius: 50%;
+    position:absolute;
+    box-shadow: 0 0 1em .4em #e37d7d;
+}
+
+
+
+
+

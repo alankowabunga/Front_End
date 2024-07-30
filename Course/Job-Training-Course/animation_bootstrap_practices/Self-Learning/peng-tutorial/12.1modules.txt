@@ -1,0 +1,25 @@
+模組 Module: 單一程式切割為多個檔案，每個檔案稱之為模組。
+現代的js有完整的模組能力，支援獨立的模組名稱空間，以及export/import 語法
+
+eg. 
+function echo(msg){
+    console.log(msg);
+}
+let name="abc";
+echo(name);
+
+將上面的程式碼切割成兩個檔案
+*檔案名稱 lib.js:
+function echo(msg){
+    console.log(msg);
+}
+export default echo; //export default 資料
+
+*檔案名稱 main.js:
+// import 資料 from "模組檔案路徑"
+import echo from "./lib.js";
+let name="abc";
+echo(name);
+
+*再HTML中引入主要的程式檔案:
+<script type="module" src="main.js"></script>

@@ -1,0 +1,19 @@
+<!-- 事件監聽器: 有兩種方式，第一種寫在html檔裡 -->
+<!-- https://www.w3schools.com/js/js_htmldom_events.asp -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" width="device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>Event Listener</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <img id="img" src="lexus.jpeg" width="300"/>
+        <!-- 偵測按鈕是否有按過 onclick="function_name"，handle_click()的函式也在js檔-->
+        <!-- 將 this 當作函數的參數。this代表的意思為[現在按下去的那個元素]也就是按下按鈕 button -->
+        <!-- 事件元素在 html 檔中，前面都要加on， 因此click會變成onclick -->
+        <button id="btn" onclick="handle_click(this)">Your Ride</button> <!--參數 this 傳到 js 檔設定的參數 element-->
+        <script src="03.1event-listener.js"></script>
+    </body>
+</html>

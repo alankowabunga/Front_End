@@ -1,0 +1,23 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    height:100vh;
+    background-color: #f7c9c9;
+    display:grid;
+    place-items: center;
+}
+.container{
+    position: relative;
+    padding:0;
+    box-shadow: 0 0 1em white;
+}
+button{
+    position:absolute;
+}
+.btn-info{
+    left:230px;
+}

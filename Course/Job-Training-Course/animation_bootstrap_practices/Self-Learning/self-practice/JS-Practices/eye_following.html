@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyevalls Following</title>
+    <style>
+        body{
+            height:100vh;
+            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(244,230,230,1) 19%, rgba(37,34,34,1) 90%);
+            display:grid;
+            position: relative;
+            overflow: hidden;
+            cursor:none;
+        }
+        #anchor{
+            position:absolute;
+            top:50%;left:15%;
+            transform: scale(1.6);
+        }
+        .eyeballs,.eyeballs img{
+            position:absolute;
+            border-radius: 10px;
+        }
+        .eyeballs img{
+            height:29px;
+            width:29x;
+        }
+        #ufo{
+            position:absolute;
+            transform:scale(.6);
+        }
+    </style>
+</head>
+<body>
+    
+        <img src="../my_Images/rick_morty2.png" alt="" id="anchor">
+        <div class="eyeballs">
+            <img src="../my_Images/eyeball2.png" alt="" class="eyeball" style="top:813px;left:230px">
+            <img src="../my_Images/eyeball2.png" alt="" class="eyeball" style="top: 802px;
+            left: 298px;">
+            <img src="../my_Images/eyeball2.png" alt="" class="eyeball" style="top: 655px;
+            left: 390px;">
+            <img src="../my_Images/eyeball2.png" alt="" class="eyeball" style="top:653px;left:460px;">
+        </div>
+   
+        <img src="../my_Images/ufo.png" alt="" id="ufo">
+
+    <script src="../../../source_code_js/jquery-source-code.js"></script>
+    <script src="../my_JavaScript/eyeballs.js"></script>
+</body>
+</html>

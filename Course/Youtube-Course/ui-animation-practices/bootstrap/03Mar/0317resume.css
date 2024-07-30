@@ -1,0 +1,32 @@
+.banner{
+    height:60vh;
+}
+.row{
+    height:80vh;
+}
+.time-line-section{
+    position:relative;
+}
+.time-line-section::before{
+    content:"";
+    position:absolute;
+    background-color: #f10000;
+    height:100%;
+    width:2px;
+    top:0;
+    left:.6rem;
+    z-index: 3;
+}
+.time-line-section-dot{
+    position:relative;
+}
+.time-line-section-dot::before{
+    content:"";
+    position:absolute;
+    background-color: #ff0000;
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    top:50%;
+    left:.8rem;
+}

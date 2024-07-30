@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide-In panels</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="../source_code_css/bootstrap.min.css">
+    <style>
+        .blue{
+            height:100vh;
+            width:100vw;
+            position:sticky;
+            z-index: 3;
+            font-size: 5em;
+        }
+        .bg-dark{
+            color:aliceblue;
+            font-size: 5em;
+        }
+        .yellow{
+            color: rgb(3, 66, 255);
+            font-size: 5em;
+        }
+        .red{
+            color:rgb(255, 233, 224);
+            font-size: 5em;
+        }
+        .green{
+            color: azure;
+            font-size: 5em;
+            z-index: 0;
+        }
+        #container{
+            display: block;
+            position:relative;
+        }
+        section {
+            position:absolute;
+            height: 100vh;
+            width: 100vw;
+        }
+        .green{
+            height:150vh;
+        }
+        div,section{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="blue bg-info">Hey~</div>
+    <div id="container">
+        <section class="bg-dark">Do</section>
+        <section class="yellow bg-warning">You</section>
+        <section class="red bg-danger ">Miss</section>
+        <section class="green bg-success">Me?</section>
+    </div>
+
+
+    <script src="pinning3.js" defer></script>
+</body>
+
+</html>

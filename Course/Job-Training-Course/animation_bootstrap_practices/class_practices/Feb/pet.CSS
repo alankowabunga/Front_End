@@ -1,0 +1,17 @@
+/* font-family: 'Raleway', sans-serif;  */
+/* 利用 $錢符號做宣告 */
+
+/* $ff-s:"Raleway"; */
+
+img{
+    max-width: 200px;
+}
+
+
+nav li,footer li{
+    list-style-type:none;
+}
+
+/* footer li{
+    list-style-type:none;
+} */

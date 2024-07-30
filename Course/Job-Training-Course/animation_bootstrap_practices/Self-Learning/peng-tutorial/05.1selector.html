@@ -1,0 +1,54 @@
+<!--
+    selctor選擇器是希望能切割 CSS 樣式 & HTML 標籤
+
+HOW?
+集中管理 CSS 樣式
+使用 selector 決定 CSS 樣式的適用標籤
+
+
+1. Class selector: .名稱
+<style>
+    .名稱{color:red} 
+</styel>
+<div class="名稱"> 紅色字</div>
+
+
+2. ID selector: #名稱
+<style>
+    #title{
+        margin:10px;
+        font-size:20px
+    }
+<div id="title">標題樣式</div>
+
+3. direct selector:
+    <style>
+        body{backgrung-color:#ccaaaa}
+        #title{margin}:10px;font-size:20px}
+    </style>
+<body>
+    <div id="title">標題樣式</div>
+</body>
+
+
+4.Descendant Selector: 
+https://www.informit.com/articles/article.aspx?p=425379&seqNum=5
+Descendant selectors are used to select elements that are descendants of another element.
+
+For example, in the HTML sample shown in Listing 3.1, three <a> elements are descendants of the <li> elements. To target these three <a> elements only, and not all other <a> elements, a descendant selector can be used as shown in Listing 3.6. This selector targets any <a> element that is nested inside an <li> element.
+
+Listing 3.6 CSS Code Containing Descendant Selector:
+
+li a
+{
+ color: green;
+}
+
+Descendant selectors do not have to use direct descendant elements. For example, the <a> element is a descendant of <div id="nav"> as well as the <li> element. This means that #nav a can be used as a selector as well (see Listing 3.7).
+Listing 3.7 CSS Code Containing Descendant Selector
+
+#nav a
+{
+ color: red;
+}
+-->

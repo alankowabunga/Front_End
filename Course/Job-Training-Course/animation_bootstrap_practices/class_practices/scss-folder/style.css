@@ -1,0 +1,63 @@
+@charset "UTF-8";
+:root {
+  --color2: linear-gradient(to right, blue, red);
+}
+
+/* @mixin & @include的搭配使用 */
+.list1 {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  color: blue;
+}
+
+.list2 {
+  display: flex;
+  flex-direction: column;
+  list-style-type: upper-roman;
+  color: yellow;
+}
+
+.wrapper {
+  background-color: #e89999;
+  height: 50vh;
+}
+.wrapper > p {
+  font-size: 3em;
+}
+.wrapper > p:hover {
+  font-style: italic;
+  -webkit-text-decoration: wavy;
+          text-decoration: wavy;
+  background: var(--color2);
+}
+.wrapper:hover p {
+  text-shadow: 0 0 0.3rem wheat;
+  font-size: 4em;
+  color: white;
+}
+.wrapper .test1 {
+  /* 將會重複用到的 CSS設定放在 mixin中 */
+  color: rgb(255, 132, 24);
+  background-color: #ccd4fb;
+  height: 20px;
+  width: 20px;
+}
+.wrapper .test2 {
+  color: brown;
+  font-size: 3em;
+  -webkit-text-decoration: wavy;
+          text-decoration: wavy;
+  font-weight: bold;
+}
+
+.a, .b {
+  background-color: #e7e57d;
+  height: 200px;
+}
+
+.b {
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

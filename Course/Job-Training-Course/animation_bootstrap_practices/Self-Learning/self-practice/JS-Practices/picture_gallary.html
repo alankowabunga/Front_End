@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Gallary</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="/Self-Learning/self-practice/myStyles/gallary.css">
+</head>
+
+<body>
+    <!-- 利用自訂 dataset 紀錄滑鼠座標 -->
+    <div class="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+        <img class="img" src="/my_Images/audi3.avif" draggable="false">
+        <img class="img" src="/my_Images/bmw_mark.avif" draggable="false">
+        <img class="img" src="/my_Images/honda.avif" draggable="false">
+        <img class="img" src="/my_Images/bmw.avif" draggable="false">
+        <img class="img" src="/my_Images/japan.avif" draggable="false">
+        <img class="img" src="/my_Images/i8.avif" draggable="false">
+        <img class="img" src="/my_Images/mclaren.avif" draggable="false">
+    </div>
+    <script src="../my_JavaScript/gallary.js"></script>
+    <script src="../my_JavaScript/gallary_scrollTrigger.js" defer></script>
+</body>
+
+</html>

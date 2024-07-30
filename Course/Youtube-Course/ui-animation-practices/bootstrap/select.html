@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta  boxset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Practice</title>
+    <link rel="stylesheet" href="./css-index/bootstrap.min.css">
+    <style>
+        :root {
+            --bgClr: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            background-image: var(--bgClr);
+
+        }
+    </style>
+</head>
+<body>
+
+    <select id="select-box">
+        <option value="Ford">Ford</option>
+        <option value="Volvo">Volvo</option>
+        <option value="Fiat">Fiat</option>
+      </select>
+
+    <script src="./js-index/jquery-source-code.js"></script>
+    <script>
+        $(function(){
+            $("#select-box").on('change',()=>{
+
+                console.log($("#select-box option:selected").text());
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+AJAX 是利用 Javaxcript 程式進行網路連線
+
+名稱演變:
+初期叫 AJAX 技術
+中期叫 XHR 物件
+最新的方法是用 fetch 函式
+
+
+*使用 fetch 函式 (Javascript 內建的連線用函式)
+語法:
+
+fetch(網址).then(function(回應物件){
+    console.log(回應物件);
+});
+
+*接著根據網址連線後的回應，寫出對應的程式 
+1.取得純文字的回應:
+fetch(網址).then(function(response){
+    
+    return response.text();  // .text() 意思為將回應解讀成文字資料
+
+}).then(function(data){  // data 取得已解析成文字的資料
+    console.log(data):  //文字資料
+})
+
+
+2.取得 JSON 格式的回應
+fetch(網址).then(function(response){
+    return response.json();
+}).then(function(data){
+    console.log(data);  //JSON 格式資料
+})\)

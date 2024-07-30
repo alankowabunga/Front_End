@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>計時器測試練習</title>
+  <style>
+    .box {
+      width: 150px;
+      height: 150px;
+      margin: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text {
+      /* background-color: bisque; */
+    }
+
+    .box01 {
+      background-color: #cac;
+    }
+
+
+    .box02 {
+      background-color: #f5c;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="bigClock">
+    <h1 class="bigClockText">時間：0秒</h1>
+  </div>
+
+  <div class="box box01">
+    <div>audio01</div>
+  </div>
+
+  <div class="box box02">
+    <div>audio02</div>
+  </div>
+
+  <audio data-num="01" src="./audio/Mobile - Incredibox - v1 - Alpha/ogg/1_lead_a.ogg"></audio>
+  <audio data-num="02" src="./audio/Mobile - Incredibox - v1 - Alpha/ogg/2_deux_a.ogg"></audio>
+
+
+  <script>
+
+    let bigClock = document.querySelector('.bigClock');
+    let bigClockText = document.querySelector('.bigClockText');
+
+    var boxes = document.querySelectorAll('.box')
+    var audios = document.querySelectorAll('audio');
+
+    var hasIsPlay;
+    var clickForFirstSong = true;
+    var ClockTime = 0;
+
+
+    // 將每個 box 添增點擊事件
+    boxes.forEach((box, index) => {
+      box.addEventListener('click', () => {
+
+        box.classList.toggle("isPlay");
+
+        // 查看是否有 isPlay 屬性，作為計時器設定的判斷
+        chkIsPlay = () => {
+
+          hasIsPlay = document.querySelectorAll('.isPlay');
+          console.log(".isPlay 數量為", hasIsPlay.length);
+
+          if (hasIsPlay.length > 0) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        //大會秒鐘
+        if (chkIsPlay()) {
+
+          var clockInterval = setInterval(function () {
+            ClockTime = (ClockTime == 5) ? 0 : ClockTime += 0.5;
+
+            bigClockText.innerHTML = `時間：${ClockTime}秒`;
+
+            let hasIsPlay = chkIsPlay();
+            if (hasIsPlay == false) {
+              clearInterval(clockInterval);
+              console.log(".isPlay 數量為", hasIsPlay.length);
+              bigClockText.innerHTML = `時間：0秒`;
+            }
+          }, 500);
+        }
+
+        // 撥放音樂
+        var counter = ClockTime;
+
+        // 當都沒有 isPlay 屬性時
+        if (chkIsPlay() && clickForFirstSong) {
+
+          audios[index].play();
+          audios[index].loop = true;
+          clickForFirstSong=false;
+
+        } else if (box.classList.contains("isPlay") && (counter != 5)) {
+
+          clickForFirstSong=false;
+
+          let myInterval = setInterval(() => {
+            counter = ((counter == 5)) ? playAudio() : (counter += 0.5);
+            console.log("計數:", counter);
+          }, 500)
+
+          playAudio = () => {
+
+            if (box.classList.contains("isPlay")) {
+
+              audios[index].play();
+              audios[index].loop = true;
+              clearInterval(myInterval);
+            }
+          }
+        } else if ((box.classList.contains("isPlay")) == false) {
+          audios[index].pause();
+          audios[index].currentTime = 0; // 停止音樂並把當前播放時間設置為 0
+          clickForFirstSong = true;
+        }
+      })
+    })
+
+  </script>
+
+</body>
+
+
+</html>

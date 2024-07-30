@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNCR Table</title>
+    <link rel="stylesheet" href="./css-index/bootstrap.min.css">
+    <style>
+        *,*::before{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        header{
+            text-align: center;
+            background-color: bisque;
+            width:max-content;
+            margin:0 auto;
+        }
+        body{
+            height:100vh;
+            max-width:90vw;
+        }
+        @media screen and (max-width:450px){
+            
+            .table-rwd thead tr th{
+                display:none;      
+            }
+            table td {
+                display:block;
+            }
+
+            table tr td span::before{
+                content:attr(data-th)" : ";
+                color:brown;
+                font-size:larger;
+                font-weight:bolder;                
+
+                display:block;
+                float:left;
+                width:40%;
+            }
+            .txt{
+                display:block;
+                /* float:right; */
+                width:100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Table RWD Practice</h1></header>
+    <main>
+        <table class="table table-bordered table-hover table-striped table-rwd">
+            <thead>
+                <tr class="table-primary">
+                    <th>類別</th>
+                    <th>標題</th>
+                    <th>發布單位</th>
+                    <th>發布日期</th>
+                    <th>點閱人氣</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span data-th="類別" class="txt">最新消息</span></td>
+                    <td><span data-th="標題" class="txt">開班</span></td>
+                    <td><span data-th="發布單位" class="txt">二股</span></td>
+                    <td><span data-th="發布日期" class="txt">112-02-24</span></td>
+                    <td><span data-th="點閱人氣" class="txt">111</span></td>
+                </tr>
+                <tr>
+                    <td><span data-th="類別" class="txt">最新消息</span></td>
+                    <td><span data-th="標題" class="txt">開會</span></td>
+                    <td><span data-th="發布單位" class="txt">四股</span></td>
+                    <td><span data-th="發布日期" class="txt">112-02-24</span></td>
+                        <td><span data-th="點閱人氣" class="txt">222</span></td>
+                </tr>
+                <tr>
+                    <td><span data-th="類別" class="txt">機關徵才</span></td>
+                    <td><span data-th="標題" class="txt">晨操</span></td>
+                    <td><span data-th="發布單位" class="txt">訓練推廣科</span></td>
+                    <td><span data-th="發布日期" class="txt">112-02-22</span></td>
+                    <td><span data-th="點閱人氣" class="txt">333</span></td>
+                </tr>
+                <tr>
+                    <td><span data-th="類別" class="txt">最新消息</span></td>
+                    <td><span data-th="標題" class="txt">錄取人員</span></td>
+                    <td><span data-th="發布單位" class="txt">人事科</span></td>
+                    <td><span data-th="發布日期" class="txt">112-02-21</span></td>
+                    <td><span data-th="點閱人氣" class="txt">444</span></td>
+                </tr>
+                <tr>
+                    <td><span data-th="類別" class="txt">機關徵才</span></td>
+                    <td><span data-th="標題" class="txt">訓練計畫</span></td>
+                    <td><span data-th="發布單位" class="txt">大股</span></td>
+                    <td><span data-th="發布日期" class="txt">112-02-21</span></td>
+                    <td><span data-th="點閱人氣" class="txt">555</span></td>
+                </tr>
+                <tr>
+                    <td><span data-th="類別" class="txt">機關徵才</span></td>
+                    <td><span data-th="標題" class="txt">六股</span></td>
+                    <td><span data-th="發布單位" class="txt">逃亡計畫</span></td>
+                    <td><span data-th="發布日期" class="txt">112-02-11</span></td>
+                    <td><span data-th="點閱人氣" class="txt">666</span></td>
+                </tr>
+                <tr>
+                    <td><span data-th="類別" class="txt">機關徵才</span></td>
+                    <td><span data-th="標題" class="txt">黑鷹計畫</span></td>
+                    <td><span data-th="發布單位">七股</span></td>
+                    <td><span data-th="發布日期" class="txt">112-02-10</span></td>
+                    <td><span data-th="點閱人氣" class="txt">777</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

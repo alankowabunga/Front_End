@@ -1,0 +1,121 @@
+
+*{
+    margin:0;
+    padding:0;
+    font-style: inherit;
+}
+body{
+    min-width:40vw;
+    
+    height:100vh;
+    border:2px solid black;
+    text-align: center;
+}
+header{
+    height:auto;
+    width:100%;
+    align-items: center;
+    background-color:antiquewhite;
+    
+}
+header::after{
+    content:"";display:block;
+    background-color:burlywood;
+    width:100%;height:8%;
+    position:absolute;z-index:-1;
+    transform:skewY(1.7deg);transform-origin:right;
+}
+
+nav ul{
+    display:flex;
+    /* 
+    若要達到置中，平均分配等等。第一種方法在父層設定 flexbox / justify-content。第二種在目標層設定 flex-grow/shrink/basis or flex:1。
+    justify-content:space-between / space-evenly / center ; 放在父層*/
+    
+}
+nav ul li{
+    list-style-type:none;
+    /* flex-grow:0  flex-shrink:1 flex-basis:auto 為預設值。
+    這幾項屬性都是自己為單位去設定，因此直接寫在目標層
+    */
+    flex-grow:1;flex-shrink:1;flex-basis:0;
+    /* 上面三項的設定也就等於 flex:1; */
+    flex:1;
+    box-shadow:0px 0px 1.2em yellow;background-color:rgb(242, 140, 15);
+    border-radius:15px;background-color:hsla
+}
+
+
+.title{
+    font-size:5em;background-color: burlywood;
+}
+main{  
+    height:60vh;
+    display:flex;
+    justify-content:center;align-items: center;
+    background-color: rgb(241, 199, 199);
+    position:relative;z-index: -3;
+}
+
+
+.heart{
+    position:relative;
+    height:60px;width:60px;background-color:#f20044;
+    transform:rotate(45deg);
+
+    box-shadow:-10px 10px 70px #f20044;
+    animation:heart 600ms linear infinite;
+}
+@keyframes heart{
+    0%{
+        transform:rotate(45deg) scale(1.03);
+    }
+    80%{
+        transform:rotate(45deg) scale(1);
+    }
+    100%{
+        transform:rotate(45deg) scale(.9);
+    }
+}
+
+.heart::before{
+    content:"";height:60px;width:60px;
+    background-color: #f20044;display:block;
+    position:absolute;
+    top:-50%;
+    border-radius:50%;
+    
+    box-shadow:10px 10px 70px #f20044;
+}
+
+.heart::after{
+    content:"";height:60px;width:60px;
+    background-color: #f20044;display:block;
+    position:absolute;
+    left:-50%;
+    border-radius:50%;
+}
+
+
+
+footer{
+    font-size:3em;
+    height:10vh;
+    background-color:brown;
+    display:flex;justify-content: center;align-items: center;
+}
+footer::before{
+    content:"";display:block;
+    width:100%;height:10%;
+    background-color:brown;
+
+    transform:skewY(-1.7deg);
+    transform-origin:left;
+    position:absolute;
+    z-index:-1;
+}
+
+
+.btn{
+    text-decoration: none;color:inherit;padding:1.6rem 2rem;flex-wrap:wrap;
+}

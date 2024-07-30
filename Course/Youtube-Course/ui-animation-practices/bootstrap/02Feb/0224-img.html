@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Image</title>
+    <link rel="stylesheet" href="../bootstrap/css-index/bootstrap.min.css">
+    <meta http-euiv="refresh" content="5">
+    <style>
+        #img1{
+            background-image:url(../bootstrap/imgFolder/Q60.jpg);
+            width:40em;
+            height:35em;
+            border-radius:2rem;
+        }
+        #img2{
+            background-image: url(../bootstrap/imgFolder/RC.jpg);
+            background-position:center center;
+
+            width:50em;
+            height:35em;
+            border-radius:2rem;
+        }
+        p{
+            font-size:1.5rem;font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>用 CSS 來置入圖片比較有彈性</h1>
+    <p>background-image:url();</p>
+    
+
+    <div id="img1" class="d-block mx-auto"></div>
+    <p>d-block mx-auto, 配合 html img 使用</p>
+    
+    <div id="img2" class="img-fluid"></div>
+    <p>img-fluid 的設定就是 max-width:100%; height:auto;依照父元素進行縮放</p>
+
+    <script src="../bootstrap/js-index/"></script>
+</body>
+</html>

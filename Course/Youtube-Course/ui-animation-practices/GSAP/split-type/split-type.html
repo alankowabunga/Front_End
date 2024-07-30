@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="../source_code_css/bootstrap.min.css">
+    <link rel="stylesheet" href="../myStyle/text.css">
+    <title>Split Type</title>
+</head>
+
+<body>
+
+    <div class="button-group">
+        <button id="char-btn" class="char-btn btn btn-lg btn-outline-primary">char</button>
+        <button id="word-btn" class="word-btn btn btn-lg btn-outline-dark">word</button>
+        <button id="line-btn" class="line-btn btn btn-lg btn-outline-danger">line</button>
+    </div>
+
+    <div class="container">
+        <div class="text"> lines, words, and characters can be animated independently. It was inspired by GSAP's
+            SplitText plugin</div>
+    </div>
+
+
+    <script src="https://unpkg.com/split-type"></script>
+    <script defer>
+        const myText = new SplitType('.text');
+
+        // An array of the all line elements
+        console.log(myText.lines)
+        // An array of all word elements
+        console.log(myText.words)
+        // An array of all character elements
+        console.log(myText.chars)
+
+        document.getElementById('char-btn').addEventListener('click', () => {
+
+            gsap.from('.char', { duration: .2, yPercent: 300, stagger: .1 })
+        })
+        document.getElementById('word-btn').addEventListener('click', () => {
+
+            gsap.from('.word', { yPercent: 300, stagger: 0.08 })
+
+        })
+        document.getElementById('line-btn').addEventListener('click', () => {
+
+
+            gsap.from('.line', { duration: 2, yPercent: 300, stagger: 0.08 })
+        })
+    </script>
+</body>
+
+</html>

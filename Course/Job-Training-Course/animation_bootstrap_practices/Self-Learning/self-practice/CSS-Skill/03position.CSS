@@ -1,0 +1,28 @@
+.parent{
+    background:aquamarine;
+    height:75vh;
+    width:75vw;
+    padding:1em;
+    /* position:relative; 父層 */
+}
+
+.parent p{
+    position:relative;
+    z-index: 10; /* z-index 10 > 0 因此會在上層*/
+}
+
+.child{
+    background: red;
+    width:50px;
+    height:50px;
+    position:absolute; /* absolute 會使物件 out of flow，其他會無視它進行預設 flow 排版，預設為相對body位移 */
+    /* 設定 position 後可以設定上下左右，top:50px 代表離上方距離 50px */
+
+    /* 藉由設定父層為 relative ，可使 子層位移相對其父層位置 */
+    /* top:0;
+    bottom:0;
+    right:25%;
+    left:25%; */
+
+    z-index:0; /* z-index 可設定上下層的排序，數字越大越上層(越靠近你)*/
+}

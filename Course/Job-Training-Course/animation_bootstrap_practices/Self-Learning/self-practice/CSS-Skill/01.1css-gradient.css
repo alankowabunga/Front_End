@@ -1,0 +1,75 @@
+:root{
+    --gradient:linear-gradient(
+        45deg,
+        #845ec2,
+        #d65db1,
+        #ff6f91,
+        #ff9671,
+        #ffc75f,
+        #f9f871
+    );
+}
+body{
+    /* sans-serif ( 無襯線體 ) */
+    /* https://www.oxxostudio.tw/articles/201811/css-font-family.html */
+    font-family: basic-sans,sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125em;line-height:1.6;
+    color:#333;background: #ddd;
+    /* 設定主背景動畫前置設定 */
+    background-image:var(--gradient);
+    background-size: 400%;
+    animation:bg-animation 5s infinite alternate;
+}
+
+@keyframes bg-animation{
+    0%{
+        background-position:left;
+    }
+    100%{
+        background-position:right;
+    }
+}
+
+.content{
+    background-color: #fff;
+    /* vw & vh = view-width and view-height 也就是螢幕可視範圍的百分比，會隨者瀏覽器的縮放改變 */
+    width:70vw; 
+    padding:3em;
+    box-shadow:0 0 3em rgba(0,0,0,0.15);
+}
+.title{
+    margin:0 0 0.5em;
+    text-transform:uppercase;
+    font-weight: 900;
+    font-style:italic;
+    font-size:3rem;
+    color:#ee6352;
+    line-height: 0.8;
+    margin:0;
+}
+.fun{
+    cursor:pointer;
+    border:0;
+    padding:0.5em 1.5em;
+    font-size:2rem;
+    background-image:var(--gradient);
+    /* background-img無法有效發揮transition，但position的功能可以操作transition */
+    /* 先將底色放大，接著設定position，最後設定 transition */
+    background-size: 300%;
+    background-position: left;
+    transition:background-position 1s;
+}
+.fun:hover,
+.fun:focus{
+    background-position: right;
+}
+/* 
+:active 滑鼠按下的樣式
+:focus 鍵盤聚焦的樣式
+:hover 滑鼠滑過的樣式
+:link 還沒被訪問的樣式
+:visited 被訪問過的樣式 */

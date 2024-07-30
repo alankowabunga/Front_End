@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Drag & Drop</title>
+    <style>
+        body {
+            margin: 2em;
+            height:100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #8f6161;
+        }
+
+        .container {
+            background-color: #301a57;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .box {
+            padding: 1rem;
+            background-color: rgb(248, 215, 215);
+            border: 1px solid black;
+            cursor: move;
+        }
+
+        .box.dragging {
+            opacity: .5;
+        }
+        span{
+            color:aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="containerA">
+        <span>No.1 Container</span>
+        <p class="box" draggable="true">1</p>
+        <p class="box" draggable="true">2</p>
+      </div>
+      <div class="container" id="containerB">
+        <span>No.2 Container</span>
+        <p class="box" draggable="true">3</p>
+        <p class="box" draggable="true">4</p>
+      </div>
+
+    <script src="../myJS/vanilla.js"></script>
+</body>
+</html>

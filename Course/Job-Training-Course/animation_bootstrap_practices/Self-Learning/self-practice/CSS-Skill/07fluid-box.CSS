@@ -1,0 +1,42 @@
+body{
+    height:100vh;
+    background:#ffefdb;
+    color:#352a22;
+    font-family:sans-serif;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainBox{
+    border:#352a22 4px solid;
+    width:400px;height:400px;
+    position:relative;
+    border-radius:8px;
+    background-color:burlywood;
+
+    display:flex;align-items:center;justify-content:center;
+    flex-direction:column;
+
+    overflow:hidden;
+}
+
+.fluidBox{
+    border:red 1px dotted;
+    min-width:200%; /* 相對父層 400px 的 200%，也就是最窄寬度 800px */
+    min-height:225%; /* 此時 fluid box 是大約 main box的兩倍*/
+    border-radius:35%;
+    background-color:#ffefdb; /* 和 body 的背景色相同*/
+    position:absolute;z-index:10;
+    
+    animation:spin 5s infinite alternate ease-in-out; /* forward 會滿了後就停止在滿的狀態*/
+}
+
+@keyframes spin{
+    0%{
+        transform:translateY(0px); /* 沒有移動 */
+    }
+    100%{
+        transform:translateY(-850px) rotate(360deg); /* 往上 */
+    }
+}

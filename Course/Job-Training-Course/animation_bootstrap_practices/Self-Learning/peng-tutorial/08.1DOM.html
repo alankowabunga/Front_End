@@ -1,0 +1,26 @@
+<!-- https://ithelp.ithome.com.tw/articles/10237798 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" width="device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>Javascript: HTML DOM 網頁畫面操作</title>
+    </head>
+    <body>
+        <h3>畫面操作</h3>
+        <div id="content">practice</div>
+        <!-- 
+           onclick() ：不能同時綁定一個以上的事件。
+           addEventListener () :可同時綁定多個事件。
+         -->
+        <button onclick="change()">Press Me</button>
+        <script>
+            function change(){
+                // 取得標籤物件
+                let elem=document.querySelector("#content");
+                // 操作標籤物件
+                elem.innerHTML="對特定的標籤做操作";
+            }
+        </script>
+    </body>
+</html>

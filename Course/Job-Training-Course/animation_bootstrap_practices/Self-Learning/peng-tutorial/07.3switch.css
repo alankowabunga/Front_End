@@ -1,0 +1,15 @@
+/*
+利用顯示和隱藏來決定要展示的版面
+
+#html 程式碼
+<div class="desktop">Desktop</div>
+<div class="mobile">Mobile</div>
+
+#CSS 的設定
+.desktop{display:block}
+.mobile{display:none}
+media(max-width:500px){
+    //螢幕寬度小於500px
+    .desktop{display:none}
+    .mobile{display:block}
+*/

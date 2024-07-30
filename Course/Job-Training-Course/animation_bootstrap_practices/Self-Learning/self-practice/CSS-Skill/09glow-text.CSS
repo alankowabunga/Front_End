@@ -1,0 +1,58 @@
+body{
+    height:100vh;
+    display:flex;align-items:center;justify-content:center;
+    background-color:black;
+    margin:0;
+}
+
+.neon{
+    position:relative;
+    overflow:hidden;
+    filter:brightness(200%);
+}
+
+.text{
+    background:black;
+    color:white;
+    position:relative;
+    font-size:4em;font-weight:bold;
+    text-transform:uppercase;
+    user-select:none;
+}
+
+.text::before{
+    content:attr(data-text);
+    position:absolute;
+    filter:blur(0.02em);
+    mix-blend-mode:difference;
+}
+
+.gradient{
+    position:absolute;
+    background:linear-gradient(to right,red,gold,lightgreen,gold,red);
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    mix-blend-mode:multiply;
+    
+}
+.spotlight{
+    position:absolute;
+    top:-100%;
+    left:-100%;
+    right:0;
+    bottom:0;
+    background:
+    radial-gradient(circle,white,transparent 25%)center/ 25% 25%,
+    radial-gradient(circle,white,black 25%)center/12.5% 12.5%;
+    mix-blend-mode:color-dodge;
+
+    animation:light 5s linear infinite;
+}
+
+@keyframes light{
+    100%{
+        transform:translate(50%,50%);
+    }
+}

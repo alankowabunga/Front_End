@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Drill</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myCss.css">
+    <style>
+        .age-display {
+            color: blue;
+            border: 1px solid blue;
+            height: 2em;
+            width: 2em;
+            text-align: center;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body onload="setDate()">
+
+    <div class="container">
+        <div class="box">
+            <form>
+                <!-- 帳號 -->
+                <div class="row row-cols-1 row-cols-sm-2 mt-2">
+                    <div class="col text-center">
+                        <label for="acct" class="col-form-label ">帳號</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" id="acct" class="form-control">
+                        <div class="valid-feedback">字數符合格式</div>
+                        <div class="invalid-feedback">字數不夠</div>
+                    </div>
+                </div>
+
+                <!-- 密碼 -->
+                <div class="row row-cols-1 row-cols-sm-2 mt-2">
+                    <div class="col text-center">
+                        <label for="psw" class="col-form-label ">密碼</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" id="psw" class="form-control">
+                        <div class="valid-feedback">字數足夠</div>
+                        <div class="invalid-feedback">字數不夠</div>
+                    </div>
+                </div>
+
+                <!-- 確認密碼 -->
+                <div class="row row-cols-1 row-cols-sm-2 mt-2">
+                    <div class="col text-center">
+                        <label for="chkpsw" class="col-form-label ">確認密碼</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" id="chkpsw" class="form-control">
+                        <div class="valid-feedback">字數足夠</div>
+                        <div class="invalid-feedback">字數不夠</div>
+                    </div>
+                </div>
+
+                <!-- 信箱 -->
+                <div class="row row-cols-1 row-cols-sm-2 mt-2">
+                    <div class="col text-center">
+                        <label for="mail" class="col-form-label ">信箱</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" id="mail" class="form-control">
+                        <div class="valid-feedback">字數足夠</div>
+                        <div class="invalid-feedback">字數不夠</div>
+                    </div>
+                </div>
+
+                <!-- 學歷 -->
+                <div class="row row-cols-1 row-cols-sm-2 mt-2">
+                    <div class="col text-center">
+                        <label for="mail" class="col-form-label ">學歷</label>
+                    </div>
+                    <div class="col">
+                        <select name="" id="mySelect">
+                            <option value="" disabled selected>select one</option>
+                            <option value="">幼幼班</option>
+                            <option value="">幼稚園</option>
+                            <option value="">寶寶班</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 年齡 -->
+                <div class="row row-cols-1 row-cols-sm-2 mt-2">
+                    <div class="col text-center">
+                        <label for="mail" class="col-form-label ">年齡</label>
+                    </div>
+                    <div class="col d-flex">
+                        <input type="range" min="1" max="100" id="age" name="age" value="1">
+                        <div class="age-display ms-5 align-self-center" id="age-display">1</div>
+                    </div>
+                </div>
+
+                <!-- 生日 -->
+                <div class="row row-cols-1 row-cols-sm-2 mt-2">
+                    <div class="col text-center">
+                        <label for="" class="col-form-label ">生日</label>
+                    </div>
+                    <div class="col">
+                        <input type="date" name="" id="date" value="">
+                    </div>
+                </div>
+
+                <!-- 興趣 -->
+                <div class="row row-cols-1 row-cols-sm-2 mt-2">
+                    <div class="col text-center">
+                        <label for="mail" class="col-form-label">興趣</label>
+                    </div>
+                    <div class="col d-flex align-items-center">
+                        <input type="checkbox" name="habits[]" id="lift" class="form-check mx-2" value="舉重">
+                        <label for="lift">舉重</label>
+
+                        <input type="checkbox" name="habits[]" id="draw" class="form-check mx-2" value="畫畫">
+                        <label for="draw">畫畫</label>
+
+                        <input type="checkbox" name="habits[]" id="piano" class="form-check mx-2" value="彈鋼琴">
+                        <label for="piano">彈鋼琴</label>
+                    </div>
+                </div>
+                <!-- 血型 -->
+                <div class="row row-cols-1 row-cols-sm-2 mt-2">
+                    <div class="col text-center">
+                        <label for="bloodType" class="col-form-label ">血型</label>
+                    </div>
+                    <div class="col">
+                        <input type="radio" name="blood-type" id="A" value="A型">
+                        <label for="A">A型</label>
+
+                        <input type="radio" name="blood-type" id="B" class="mx-2" value="B型">
+                        <label for="B">B型</label>
+
+                        <input type="radio" name="blood-type" id="O" class="mx-2" value="O型">
+                        <label for="O">O型</label>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-sm-2 mt-2">
+                    <div class="col-3 offset-4 d-flex">
+                        <button type="button" class="btn btn-outline-info" id="submit-button">送出</button>
+                        <button type="reset" class="btn btn-outline-warning ms-3" id="clear-button">清除</button>
+                    </div>
+                </div>
+        </div>
+        </form>
+
+        <table class="table table-hovered table-striped table-bordered table-primary mt-5" id="tb">
+
+        </table>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery-source-code.js"></script>
+        <script>
+
+            var flag_acct = false;
+            var flag_psw = false;
+            var flag_chkpsw = false;
+
+            // 帳號格式:字數 8+ (字首大寫)
+            $("#acct").on("input propertyChange", () => {
+                if ($("#acct").val().length < 8) {
+                    $("#acct").removeClass("is-valid");
+                    $("#acct").addClass("is-invalid");
+                    flag_acct = false;
+                } else {
+                    $("#acct").removeClass("is-invalid");
+                    $("#acct").addClass("is-valid");
+                    flag_acct = true;
+                }
+            })
+
+            // 密碼格式
+            $("#psw").on("input propertyChange", () => {
+                if ($("#psw").val().length < 8) {
+                    $("#psw").removeClass("is-valid");
+                    $("#psw").addClass("is-invalid");
+                    flag_psw = false;
+                } else {
+                    $("#psw").removeClass("is-invalid");
+                    $("#psw").addClass("is-valid");
+                    flag_psw = true;
+                }
+            })
+
+            // 確認密碼格式 
+            $("#chkpsw").on("input propertyChange", () => {
+                if ($("#chkpsw").val().length < 8) {
+                    $("#chkpsw").removeClass("is-valid");
+                    $("#chkpsw").addClass("is-invalid");
+                    flag_chkpsw = false;
+                } else {
+                    $("#chkpsw").removeClass("is-invalid");
+                    $("#chkpsw").addClass("is-valid");
+                    flag_chkpsw = true;
+                }
+            })
+
+            function setDate() {
+
+                // 預設日期為當天
+                // 年: getFullYear()、月: getMonth()、日: getDate()
+                var dateObj = new Date();
+                var yyyy = dateObj.getFullYear();
+
+                var MM = (dateObj.getMonth() >= 10) ? dateObj.getMonth() + 1 : "0" + (dateObj.getMonth() + 1);
+
+                var dd = (dateObj.getDate() > +10) ? dateObj.getDate() : "0" + dateObj.getDate();
+
+                var today = yyyy + "-" + MM + "-" + dd;
+
+                $("#date").val(today);
+            }
+
+            // 及時顯示年齡
+            $("#age").on('input', () => {
+                var output = $("#age").val();
+                $("#age-display").text(output);
+            })
+
+            // 送出表單
+            $("#submit-button").on('click', () => {
+
+                // 字首要大寫 
+                if ($("#acct").val().charAt(0) == $("#acct").val().charAt(0).toUpperCase()) {
+                    chkFormat();
+                } else {
+                    alert("帳號字首要大寫喔~");
+                }
+            });
+
+            // 格式都正確
+            function chkFormat() {
+
+                var flag_all = flag_acct && flag_psw && flag_chkpsw;
+
+                console.log(flag_all);
+                if (flag_all) {
+                    chkpsw();
+                } else {
+                    alert("有格式輸入錯誤喔~");
+                }
+            }
+
+            // 密碼輸入一致
+            function chkpsw() {
+                if ($("#psw").val() == $("#chkpsw").val()) {
+
+                    alert("送出成功!!")
+                    // 用字串陣列處理checkbox
+                    // 宣告: let 變數 = [] 或是 let 變數 = new Array()
+                    var checkedValue = new Array();
+                    $("input[name='habits[]']:checked").each((i, item) => {
+                        checkedValue.push($(item).val());
+                    })
+                    console.log(checkedValue.join(','));
+
+                    // 學歷 select - option
+                    var selectedTxt = $("#mySelect :selected").text();
+
+                    //結果顯示 
+                    $("#tb").html(`
+                        <tr>
+                            <td>你的信箱</td>
+                            <td>${$("#mail").val()}</td>
+                        </tr>
+                        <tr>
+                            <td>你的學歷</td>
+                            <td>${selectedTxt}</td>
+                        </tr>
+                        <tr>
+                            <td>你的年齡</td>
+                            <td>${$("#age").val()}</td>
+                        </tr>
+                        <tr>
+                            <td>你的生日</td>
+                            <td>${$("#date").val()}</td>
+                        </tr>
+                        <tr>
+                            <td>你的興趣</td>
+                            <td>${checkedValue.join(',')}</td>
+                        </tr>
+                        <tr>
+                            <td>你的血型</td>
+                            <td>${$("input[name='blood-type']:checked").val()}</td>
+                        </tr> `)
+                } else {
+                    alert("密碼輸入不一致喔!");
+                }
+            }
+            // 清除按鈕( 已利用 form - reset button功能清除大部分資訊，剩下 valid/invalid 、 age-display 、table) 
+            $("#clear-button").on('click', () => {
+                $("#acct").removeClass('is-valid');
+                $("#acct").removeClass('is-invalid');
+
+                $("#psw").removeClass('is-valid');
+                $("#psw").removeClass('is-invalid');
+
+                $("#chkpsw").removeClass('is-valid');
+                $("#chkpsw").removeClass('is-invalid');
+
+                $("#age-display").text("1");
+                $("#tb").html("");
+                // 重新顯示預設日期
+                setTimeout(setDate, 500);
+            })
+        </script>
+</body>
+
+</html>

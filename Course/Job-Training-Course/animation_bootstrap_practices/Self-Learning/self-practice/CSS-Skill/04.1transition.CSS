@@ -1,0 +1,51 @@
+/* https://ithelp.ithome.com.tw/articles/10200365
+
+Transition屬性
+transition-property:指定要轉換的CSS屬性
+
+transition-duration:轉換需要的時間，預設0，單位為s或ms(.s)
+
+transition-delay:延遲多久轉換，預設0，單位為s或ms
+
+transition-timing-function:轉換時的速度曲線(linear, ease, ease-in/out)，預設ease
+
+
+雙向Transition
+1.如果要雙向動畫都相同，只要在原始狀態加入transition屬性，在觸發狀態更改要轉換的屬性參數即可。
+無雙向是只有在hover加上tansition屬性，所以會在滑鼠離開時，直接跳回原始狀態;
+而要呈現雙向動畫，只要在原始狀態加上transition屬性，並在滑鼠移入狀態加上要改變的屬性轉換參數就可以囉～
+*/
+
+body{
+    margin:100px;
+}
+
+.box{
+    width:300px;
+    height:300px;
+    background:#eDCCC7;
+
+    /* 2. 雙向 transition: 要使恢復原始狀態也有效果，就在原始狀態加入transition */
+    /* transition:width 1000ms,height 1000ms */
+    /* transition-property:all;
+    transition-duration:1000ms;
+    transition-timing-function:cubic-bezier(); */
+    transition: 1000ms background ease-in, 500ms transform ease-out 1s;
+}
+
+.box:hover{
+    background:#FF6B6B;
+    transform:rotate(45deg) ;
+    
+    /* width:350px;
+    height:350px; */
+
+    /* 1. 加入 transition 效果使變化不會突兀  */
+    /* transition:width 1s,height 1s; */
+}
+
+/* 
+CSS中的transition屬性像background屬性一樣可以分開寫也可以縮寫，但也一樣有順序性，transition用到transition-duration及transition-delay，兩個屬性都是時間單位，因此容易搞混：
+
+如果出現單寫：transition: width 1s的話，1s指的是transition-duration
+寫了兩個時間單位數值：前面出現的是transition-duration，後出現是transition-delay */

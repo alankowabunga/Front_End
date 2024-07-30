@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modules</title>
+</head>
+
+<body>
+    <pre>
+        function echo(msg) {
+            console.log(msg);
+        }
+        let name = "abc";
+        echo(name);
+    </pre>
+    <script type="module" src="12.1main.js"></script>
+    <!-- 由於在檔案 main.js 裡面沒有宣告函式名稱，因此呼叫無用，
+    我們可以引入 src="lib.js" 檔案，但更好的方法是用 js 原生模組系統
+    再 script 標籤中加上 type="module" -->
+</body>
+
+</html>

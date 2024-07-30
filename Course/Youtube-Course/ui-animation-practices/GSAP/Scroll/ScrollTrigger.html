@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Trigger</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="../source_code_css/bootstrap.min.css">
+    <script src="scroll01.js" defer></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .container {
+            height: 70vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ghost {
+            position: absolute;
+            opacity:.5
+        }
+        .b{
+            background-color: #f3a7a7;
+        }
+        .box.active{
+            background-color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bg-danger-subtle">
+        <div class="box a bg-primary">a</div>
+    </div>
+    <div class="container"></div>
+
+    <div class="container bg-dark-subtle">
+        <div class="box b">b</div>
+        <div class="box ghost bg-warning">Pin by b</div>
+    </div>
+    <div class="container bg-primary-subtle">
+        <div class="box c bg-success">c</div>
+    </div>
+    <div class="container"></div>
+    <div class="container"></div>
+</body>
+
+</html>

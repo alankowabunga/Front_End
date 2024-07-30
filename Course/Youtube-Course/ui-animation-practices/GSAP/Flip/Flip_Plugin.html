@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="5"> -->
+    <link rel="stylesheet" href="../source_code_css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="../myJS/Flip_Plugin.js" defer></script>
+    <script src="../myJS/Flip_fit.js" defer></script>
+    <script src="../myJS/data_flip_id.js" defer></script>
+    <link rel="stylesheet" href="../myStyle/css1.css">
+    <title>Flip Plugin</title>
+</head>
+
+<body>
+    <section class="flip">
+        <div class="originalContainer">
+            <div class="box">Flip</div>
+            <div class="newContainer">new container</div>
+        </div>
+        <button class="btn btn-info flip-btn">Change container</button>
+    </section>
+    <div class="block"></div>
+
+    <section class="fit bg-info-subtle">
+        <button class="btn btn-lg btn-outline-dark fit-btn">Flip.fit()</button>
+        <div class="target bg-primary">target</div>
+        <div class="bigBox border-2 bg-secondary">
+            <div class="child01 child">children 01</div>
+            <div class="child02 child">children 02</div>
+        </div>
+    </section>
+    <div class="block"></div>
+
+    <div class="swap">
+        <button class="btn btn-lg btn-warning swap-btn">swap boxes</button>
+        <div class="container1">container 1
+            <div class="orange square">1</div>
+            <div class="orange square">2</div>
+            <div class="orange square">3</div>
+            <div class="green square">4</div>
+            <div class="green square">5</div>
+            <div class="green square">6</div>
+        </div>
+        <div class="container2">container 2</div>
+    </div>
+    <div class="block"></div>
+
+    <div class="data-flip">
+        <h1>Flip Different Targets</h1>
+
+        <button class="btn btn-lg btn-light size-btn">change size</button>
+
+        <img class="thumbNail" data-flip-id="img" src="https://fakeimg.pl/300x300/200">
+
+
+        <img class="full-size  inActive" data-flip-id="img" src="https://fakeimg.pl/600x600/200">
+
+    </div>
+</body>
+
+</html>

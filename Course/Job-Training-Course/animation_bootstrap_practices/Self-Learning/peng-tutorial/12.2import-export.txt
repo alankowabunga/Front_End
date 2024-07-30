@@ -1,0 +1,46 @@
+default 語法:
+輸出時使用 default 關鍵字，輸入時可使用任意名稱
+
+*預設的語法
+export default 變數名稱;(也可直接export資料)
+
+import 變數名稱 from "模組檔案路徑";
+
+
+eg.
+*模組檔案名稱 lib.js:
+let x=4;
+export default x;  //使用 default 預設輸出，import 時的變數名稱可自訂
+
+*主程式檔案名稱: main.js:
+import x form"./lib.js"; // 變數 x 名稱可自訂為其他 y,d,w...etc
+console.log(x);
+
+======================================================
+非預設import/export:
+使用大括號 {} ，且import&export 的名稱必須相同
+
+*可同時使用預設 & 非預設的輸出/輸入:
+eg.
+*模組檔案名稱 lib.js:
+let x=3;
+let obj={x:3,y:4};
+let data=[3,5,6];
+
+export default x; //預設
+export {obj,data}; //非預設(使用大括號)
+--------------------------------
+將語法整合:
+export{x as default,obj,data};
+
+
+
+*主程式檔案名稱: main.js:
+import x from "./lib.js"; //預設
+import{obj,data}from"./lib.js"; //非預設(使用大括號)
+--------------------------------
+將語法整合:
+import x,{obj,data}from"./lib.js";
+
+console.log(x);
+console.log(obj,data);

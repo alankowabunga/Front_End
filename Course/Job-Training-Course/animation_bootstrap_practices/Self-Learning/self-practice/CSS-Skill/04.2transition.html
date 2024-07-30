@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" width="device-width, initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>Transition</title>
+        <!-- Google Font -->
+        <link rel="stylesheet" type="text/css" href="04.2transition.CSS">
+    </head>
+    <body> <!--將大方塊完美置中-->
+
+        <div class="cards">     <!-- 設定寬度為 90% 後，利用 margin:0 auto 置中(左右平均)-->
+            <div class="card">  <!--包含上下雙層卡片的方塊-->
+
+              <div class="card__header">  <!-- 上層卡片的方塊-->
+                <h2 class="card__title">This is the title</h2> 
+                <button class="card__more-info">More information</button>
+                <button class="card__less-info">Less infomation</button>
+              </div>
+
+              <div class="card__content"> <!-- 下層卡片的方塊-->
+                <p class="card__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+               
+                <div class="heart">
+                  <input type="checkbox" class="heart__checkbox">
+                  <div class="heart__icon"></div>
+                </div> 
+
+              </div>
+
+            </div>
+          </div>
+
+        <script src="04.2transition.js"></script>
+    </body>
+</html>
+

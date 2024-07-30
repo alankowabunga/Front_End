@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="../../../source_code_css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="../myStyles/resign.css" />
+        <title>Resign Letter</title>
+    </head>
+    <body>
+        <div class="container border border-4 border-danger">
+            <div class="card resign-letter">
+                <div class="card-header">
+                    <div class="card-title fs-2">辭職信</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-text">
+                        <pre>
+
+  親愛的上司
+
+我寫這封信是要通知您，我打算辭去職位。經過深思熟慮，我認為這是我個人和職業發展的最佳決定。
+
+我非常感激在 [公司名稱] 工作的機會，以及我在這裡所學到的知識和經驗。在這段時間裡，我與許多
+優秀的同事建立了深厚的關係，並獲得了寶貴的專業發展機會。我要特別感謝您對我在 [公司名稱] 
+的支持和指導。
+
+
+然而，我認為現在是我追求新的挑戰和機會的時候了。我想要開始一個新的篇章，並探索不同的
+工作領域。這個決定並不容易，但我相信這對我個人和職業成長來說是必要的。
+
+再次感謝您和整個團隊給予我的機會和支持。我對過去在 [公司名稱] 的經歷感到非常驕傲，並且
+我希望我能在未來有機會再次與您和團隊合作。
+                        </pre>
+                    </div>
+                </div>
+                <button id="yes-btn" class="btn btn-info" style="top: 430px">
+                    答應
+                </button>
+                <button
+                    id="no-btn"
+                    class="btn btn-danger"
+                    style="left: 350px; top: 430px"
+                >
+                    不答應
+                </button>
+                <div class="block" style="height: 50px"></div>
+            </div>
+        </div>
+        <img
+            src="../my_Images/duck.png"
+            id="bye-letter"
+            style="display: none"
+        />
+
+        <script src="../../../source_code_js/jquery-source-code.js"></script>
+        <script>
+            var $noBtn = $("#no-btn");
+            var $yesBtn = $("#yes-btn");
+            var $container = $(".container");
+
+            // 按鈕移動座標的計算
+            const topLine = $container.offset().top;
+            const leftLine = $container.offset().left + 10;
+            const bottomLine = topLine + $container.innerHeight();
+            const rightLine = leftLine + $container.innerWidth() - 23;
+
+            // no button
+            var index = 0;
+            $noBtn.hover((e) => {
+                console.log("X:", e.clientX, "Y:", e.clientY);
+                console.log("top:", topLine, "bottom", bottomLine);
+
+                var randomX =
+                    Math.floor(Math.random() * (rightLine - leftLine + 1)) +
+                    leftLine;
+                var randomY =
+                    Math.floor(Math.random() * (bottomLine - topLine + 1)) +
+                    topLine;
+
+                // 移動
+                $noBtn.offset({ top: randomY, left: randomX - 20 });
+
+                //border 顏色
+                const colors = [
+                    "border-danger",
+                    "border-info",
+                    "border-primary",
+                    "border-warning",
+                    "border-success",
+                ];
+
+                if (index == 4) {
+                    $container.removeClass(colors[index]);
+                    $container.addClass(colors[0]);
+                } else {
+                    $container.removeClass(colors[index]);
+                    $container.addClass(colors[index + 1]);
+                }
+
+                index++;
+                index = index % 5;
+            });
+
+            // yes button
+            $yesBtn.click((e) => {
+                $container.hide();
+                $("#bye-letter").show();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+
+元素[屬性] :對有設定指定屬性的元素進行 CSS 樣式設定       
+img[alt]{
+    border:1px solid red;        
+}
+
+
+
+元素[屬性="值"]:對有設定指定屬性及值的元素進行 CSS 樣式設定 
+a[href = "http://www.googl.com"]{
+    color: #FF0000; 
+}
+
+
+
+元素[屬性~="文字"]: 使用[~=]表示設定文字只要符合其中一個單字即可進行 CSS 樣式設定
+img[alt ~= "Google"]{
+    border:1px solid red;
+     border:1px solid red;
+}
+…… 
+<img src="logo.png" alt="I Am Google">
+
+
+
+元素[屬性^="文字"] :對其值開頭為指定文字的元素進行 CSS 樣式設定 
+a[href ^= "mailto:"]{
+    color: #FF0000;        
+}
+
+
+元素[屬性$="文字"] :對其值結束為指定文字的元素進行 CSS 樣式設定 
+a[href $= ".png"]{
+    color: #FF0000;
+}
+
+
+
+元素[屬性*="文字"] :對其值包含指定文字的元素進行 CSS 樣式設定 
+a[href *= "tcnr"]{
+    color: #FF0000;
+} 

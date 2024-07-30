@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <pre style="font-size:2em;font-weight:bold;">
+        計算加總的一般函式:
+        function sum(max){
+            let result=0;
+            let n=1;
+            while(n<=max){
+                result+=n;
+                n++;             
+            }
+            return result;
+        }
+        ========================
+        箭頭函式:
+        let sum=(max)=>{
+            let result=0;
+            let n=1;
+            while(n<=max){
+                result+=n;
+                n++;
+            }
+            return result;
+        }
+        //呼叫函式，將回傳值放入變數後取出
+        let ans1=sum(10);
+        let ans2=sum(15);
+        console.log(ans1,ans2);
+        ================================
+        // 簡化箭頭函式
+        原本為:
+        let multiply(n1,n2){
+            return n1*n2 //只有回傳值
+        }
+        可簡化為:
+        let multiply=(n1,n2)=>(n1*n2);//用箭頭函式將回傳值包起來
+        let ans3=multiply(3,4);
+        console.log(ans3);
+    </pre>
+    <script>
+        let sum=(max)=>{
+            let result=0;
+            let n=1;
+            while(n<=max){
+                result+=n;
+                n++;
+            }
+            return result;
+        }
+        //呼叫函式，將回傳值放入變數後取出
+        let ans1=sum(10);
+        let ans2=sum(15);
+        console.log(ans1,ans2);
+
+        // 簡化箭頭函式
+        let multiply=(n1,n2)=>(n1*n2);//只有回傳值
+        let ans3=multiply(3,4);
+        console.log(ans3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Practice</title>
+    <link rel="stylesheet" href="css-index/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="box p-3 border-dark bg-dark-subtle m-4">
+        <div class="text fs-3">0. data-bs-toggle/target、collapse</div>
+        <button class="btn btn-primary btn-lg" data-bs-toggle="collapse" data-bs-target="#target">Button with
+            data-bs-target</button>
+        <a class="btn btn-success btn-lg" data-bs-toggle="collapse" href="#target2" role="button">
+            Link with href
+        </a>
+        <button class="btn btn-warning btn-lg" data-bs-toggle="collapse" data-bs-target=".multi-collapse">
+            .multi-collapse</button>
+
+        <div id="target" class="collapse multi-collapse">
+            <div class="card card-body">Hello</div>
+        </div>
+        <div id="target2" class="collapse multi-collapse">
+            <div class="card card-body">How are you</div>
+        </div>
+    </div>
+
+    <div class="box p-3 border-dark bg-dark-subtle m-4">
+        <div class="text fs-3">1. Accordion手風琴</div>
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"> <!--對應到-->
+                        Accordion Item #1
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the
+                        collapse plugin adds the appropriate variables. It's also worth noting that just about any HTML
+                        can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <!-- 項目二 -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#target2">Accordion Item
+                        #2</button>
+                </div>
+
+                <div class="accordion-collapse collapse" id="target2">
+                    <div class="accordion-body">
+                        專欄工程畢業生不要總結服裝顯得能源自由作業項目組圖，日報成長根本體現為了，剛剛那位，近日殺手，方向貼布上漲評論重量親愛的訓練，那個谷歌本公司北方基層有關日記聯想台南鎖定交通文本貨幣大家，課程一系列選手眾人，不起機票伺服器刺激四個，結果草魚承擔，免費版，知。
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="box p-3 border-dark bg-dark-subtle m-4">
+            <div class="text fs-3">2. Alerts 提示警報</div>
+
+            <div class="alert alert-warning">alert-warning</div>
+            <div class="alert alert-danger">alert-danger</div>
+            <div class="alert alert-info">加入----<a href="#" class="alert-link">alert-link</a>----</div>
+
+            <div class="alert alert-success">
+                <h4 class="alert-heading">alert-heading</h4>
+                <p>hey there</p>
+                <hr>
+                <p>how you doing</p>
+            </div>
+        </div>
+        <div class="box p-3 border-dark bg-dark-subtle m-4">
+            <div class="text fs-3">3. Icon</div>
+            <i class="bi bi-heart fs-1 text-danger"></i>
+            <i class="bi bi-heart fs-1 text-danger"></i>
+            <i class="bi bi-heart fs-1 text-danger"></i>
+            <i class="bi bi-heart fs-1 text-danger"></i>
+            <div class="fs-4 text-danger">bootstrap icon 是 SVG 向量圖 可當作文字去做樣式設定</div>
+        </div>
+        <div class="box p-3 border-dark bg-dark-subtle m-4">
+            <div class="text fs-3">4. alert + icon</div>
+            <div class="alert alert-info d-flex  ">
+                <i class="bi bi-arrow-right-circle-fill fs-1"></i>
+                <h4 class="my-auto ms-3">父層:d-flex + 文字: my-auto ms-3</h4>
+            </div>
+        </div>
+        <div class="box p-3 border-dark bg-dark-subtle m-4">
+            <div class="text fs-3">補充: alert-dismissible + data-bs-dismiss="alert" + class="btn-close"</div>
+
+            <div id="alertPlaceholder"></div>
+            <button type="button" class="btn btn-danger" id="alertBtn">顯示 alert</button>
+
+
+        </div>
+        <div class="box p-3 border-dark bg-dark-subtle m-4">
+            <div class="text fs-3">5. badge</div>
+            <div class="badge bg-success fs-5">雄壯</div>
+            <div class="badge bg-info fs-5">威武</div>
+            <div class="badge rounded-pill bg-warning fs-5">rounded-pill</div>
+            <div class="text text-primary fs-4">-> 搭配 button 作為計數器</div>
+            <div class="btn btn-primary">未接來電
+                <div class="badge bg-warning">22</div>
+            </div>
+            <div class="text text-dark fs-4">-> 再加上定位</div>
+            <div class="btn btn-primary position-relative">未接來電
+                <div class="badge rounded-pill bg-warning position-absolute translate-middle">22</div>
+            </div>
+
+
+        </div>
+        <div class="box p-3 border-dark bg-dark-subtle m-4">
+            <div class="text fs-3">6. Breadcrumb</div>
+            <div class="text text-bg-success fs-4">在 nav 標籤使用 ol>li 項目列來建立 breadcrumb</div>
+            <div class="text text-bg-info fs-4">aria-current用於只是當前被選重的項目，其值可以是page、lodation、time</div>
+            <br>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                </ol>
+            </nav>
+            <div class="text text-bg-success fs-4">--bs-breadcrumb-divider: '>'</div>
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                </ol>
+            </nav>
+            <br>
+            <div class="text text-bg-info fs-4">--bs-breadcrumb-divider: url(SVG)</div>
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+                aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="box p-3 border-dark bg-dark-subtle m-4">
+            <div class="text fs-3">7. btn-group</div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary">Left</button>
+                <button type="button" class="btn btn-success">Middle</button>
+                <button type="button" class="btn btn-secondary">Right</button>
+            </div>
+
+        </div>
+        <div class="box p-3 border-dark bg-dark-subtle m-4">
+            <div class="text fs-3">8. Card</div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-header text-center">card-header</div>
+                <img src="#" class="card-img-top" alt="...">
+
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">card-text: 123456789</p>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <h5>使用 list-group-flush 在卡片內建立列表群組</h5>
+                    <li class="list-group-item">list-group-item</li>
+                    <li class="list-group-item">list-group-item</li>
+                    <li class="list-group-item">list-group-item</li>
+                </ul>
+
+                <div class="card-footer">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </div>
+        <div class="box p-3 border-dark bg-dark-subtle m-4">
+            <div class="text fs-3">9. card + nav</div>
+            <div class="card border-primary">
+                <div class="card-header">
+                    <ul class="nav nav-tabs nav-header-tabs">
+                        <li class="nav-item"><a href="#content1" id="one" class="nav-link active">首頁</a></li>
+                        <li class="nav-item"><a href="#content2" id="two" class="nav-link">商品</a></li>
+                        <li class="nav-item"><a href="#content3" id="three" class="nav-link">聯絡我們</a></li>
+                    </ul>
+                </div>
+
+                <div id="content1" class="content1">
+                    <div class="card-body">
+                        <h5 class="card-title">card title 1</h5>
+                        <p class="card-text">
+                            貼圖首先傳說南方房東降價，也在住房準備重視我又三人優點浙江正常，他就推廣遊客界面臺灣民眾感情版面看看留下是因為，一批手冊都市得到提到外觀加入學科導致廣大回憶考試毫不，可愛聯盟權益市委自主不禁美麗首頁精靈很多人令人安全，網咖工藝，對手實施風景一步，對此傳奇。
+                        </p>
+                    </div>
+                    <blockquote class="blockquote ms-4">
+                        <p>this is a blockquote</p>
+                        <div class="blockquote-footer">blockquote-footer</div>
+                    </blockquote>
+                    <div class="card-footer text-muted">2 days age</div>
+                </div>
+                <div id="content2" class="content2 d-none">
+                    <div class="card-body">
+                        <h5 class="card-title">card title 2</h5>
+                        <p class="card-text">
+                            如果版主天天，模糊各自寫出來先進性，人數鏡頭保護，終於不禁，提示他在分配請在給我發佈日期詢問論壇攝影邀請空氣怎麼辦發言，等人喜愛把握原理預防專用郵件平台，號碼統計造型探索新鮮，困難一些很熱法規選擇詳細和諧相關圖片兩次，影片經營許可證，首頁優惠狀況學術，反。
+                        </p>
+                    </div>
+                    <blockquote class="blockquote ms-4">
+                        <p>this is a blockquote</p>
+                        <div class="blockquote-footer">blockquote-footer</div>
+                    </blockquote>
+                    <div class="card-footer text-muted">2 days age</div>
+                </div>
+                <div id="content3" class="content3 d-none">
+                    <div class="card-body">
+                        <h5 class="card-title">card title 3</h5>
+                        <p class="card-text">
+                            當你擔任數字當我方案已被出版他們的欄目工程觀點新竹女朋友，幾乎內存完了作出說什麼，中文一人首次每天高達之類處理器經銷商蘋果我看，隱藏版管理系統天堂那些老公到達，春天全家，第一個有可能內存等方面安排下一頁你沒有你怎不來，研究生，聲音常常你看特點群眾證實，同。
+                        </p>
+                    </div>
+                    <blockquote class="blockquote ms-4">
+                        <p>this is a blockquote</p>
+                        <div class="blockquote-footer">blockquote-footer</div>
+                    </blockquote>
+                    <div class="card-footer text-muted">2 days age</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box p-3 border-dark bg-dark-subtle m-4">
+            <div class="text fs-3">10. dropdown</div>
+            <!-- Example single danger button -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown">
+                    Action
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+
+                <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown">Test</button>
+
+                <ol class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">item1</a>
+                    </li>
+                    <li><hr class="dropdown-divider"><hr>
+                    </li>
+                    <li><a href="#" class="dropdown-item">item2</a>
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+
+        <script src="js-index/bootstrap.bundle.min.js"></script>
+        <script src="js-index/jquery-source-code.js"></script>
+        <script>
+
+            // 4. Alert + Icon
+            var alertPlaceholder = document.getElementById('alertPlaceholder');
+            var alertTrigger = document.getElementById("alertBtn");
+
+            function alert(message, type) {
+                var wrapper = document.createElement("div");
+                wrapper.innerHTML = `
+            <div class="alert alert-${type} d-flex alert-dismissible">
+                <i class="bi bi-arrow-right-circle-fill fs-1"></i>
+                <h4 class="my-auto ms-3">${message}</h4>
+                <button class="btn-close" data-bs-dismiss="alert" type="button"></button>
+            </div>
+            `;
+                alertPlaceholder.append(wrapper);
+            }
+
+            if (alertTrigger) { //判斷按鈕元件是否存在，以避免錯誤
+                alertTrigger.addEventListener('click', function () {
+                    alert("觸發成功，背景顏色也是用引數設定的喔", "success");
+                })
+
+            }
+
+            // 9. Card + Nav
+            $(function () {
+                //點擊首頁
+                $("#one").hover(() => {
+
+                    $("#two").removeClass('active');
+                    $("#three").removeClass('active');
+                    //確認原本有無 active
+                    if (!$("#one").hasClass('active')) {
+                        $("#one").addClass('active');
+                    }
+                    //重置 d-none
+                    if ($("#content1").hasClass('d-none')) { $("#content1").removeClass('d-none') }
+                    if (!$("#content2").hasClass('d-none')) { $("#content2").addClass('d-none') }
+                    if (!$("#content3").hasClass('d-none')) { $("#content3").addClass('d-none') }
+                })
+                //點擊商品
+                $("#two").hover(() => {
+
+                    $("#one").removeClass('active');
+                    $("#three").removeClass('active');
+                    //確認原本有無 active
+                    if (!$("#two").hasClass('active')) {
+                        $("#two").addClass('active');
+                    }
+                    //重置 d-none
+                    if ($("#content2").hasClass('d-none')) { $("#content2").removeClass('d-none') }
+                    if (!$("#content1").hasClass('d-none')) { $("#content1").addClass('d-none') }
+                    if (!$("#content3").hasClass('d-none')) { $("#content3").addClass('d-none') }
+                })
+                //點擊聯絡我們
+                $("#three").hover(() => {
+
+                    $("#one").removeClass('active');
+                    $("#two").removeClass('active');
+                    //確認原本有無 active
+                    if (!$("#three").hasClass('active')) {
+                        $("#three").addClass('active');
+                    }
+                    //重置 d-none
+                    if ($("#content3").hasClass('d-none')) { $("#content3").removeClass('d-none') }
+                    if (!$("#content2").hasClass('d-none')) { $("#content2").addClass('d-none') }
+                    if (!$("#content1").hasClass('d-none')) { $("#content1").addClass('d-none') }
+                })
+
+            })
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+/* 
+https://blog.csdn.net/qq_37595946/article/details/84531311
+
+var(--名稱)函數可以代替元素中任何屬性中的值的任何部分。var()函數不能作為屬性名、選擇器或者其他除了屬性值之外的值。（這樣做通常會產生無效的語法或者一個沒有關聯到變量的值。）
+
+:root{--名稱}
+:root是文檔根元素，在:root中聲明相當於全局屬性，只要當前頁面引用了:root segment所在文件，都可以使用var()來引用
+
+*/
+:root{
+    --mycolor:pink;
+}
+div{
+    background-color: var(--mycolor);
+    /* opacity: 0.5 */
+}

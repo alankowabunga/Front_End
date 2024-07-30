@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="twicon/twicon.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    header{
+        background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+        color:#fef9d7
+    }
+    .title {
+        position: relative;
+    }
+
+    .twicon-main-island {
+        position: absolute;
+        transform: translate(-180px);
+        color: rgb(222, 250, 161);
+    }
+
+    nav {
+        background: rgba(228, 188, 136, 0.6);
+        height: 70px;
+
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    .twicon-cks-hall {
+        float: left;
+        padding: .2em;
+        cursor: pointer;
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        height: 60px;
+
+        transition: .8s linear;
+    }
+
+    ul li {
+        flex-grow: 1;
+        list-style-type: none;
+        display: inline-block;
+
+        height: 30px;
+    }
+
+
+    ul li a {
+        color: inherit;
+        line-height: 60px;
+        font-size: larger;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    main {
+        clear: left;
+        height: 50vh;
+    }
+
+    section.left {
+        background-image: linear-gradient(to right, #d299c2 0%, #fef9d7 100%);
+        width: 60%;
+        height: 100%;
+        float: left;
+    }
+
+    section.right {
+        background-image: linear-gradient(to right, #fef9d7 0%, #fcb69f 100%);;
+        width: 40%;
+        height: 100%;
+        float: right;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    i {
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+
+    p {
+        animation: showHide 5s infinite alternate;
+        background-color: #fcb6f3;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    @keyframes showHide {
+        0% {
+            width: 100%
+        }
+
+        40% {
+            width: 0%
+        }
+
+        60% {
+            width: 0%;
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+
+    .layer {
+        position: absolute;
+        background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+        height: 80px;
+        width: 100vw;
+        transform: translate(3%, 0px);
+        animation:gone1 1500ms linear forwards;
+    }
+
+    .water {
+        position: absolute;
+        background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+        height: 250px;
+        width: 250px;
+        border-radius:25% 75% 23% 77% / 50% 65% 35% 50% ;
+        transform: translateY(-80px);
+
+        animation:gone2 3500ms linear forwards;
+    }
+    @keyframes gone1{
+        100%{
+            transform: translate(100%);
+        }
+    }
+    @keyframes gone2 {
+        100%{
+            transform: translate(1000%) rotate(1900deg);
+        }
+    }
+</style>
+</head>
+
+<body>
+    <header style="text-align: center;" class="bg-primary-subtle p-2">
+        <i class="twicon-main-island" style="font-size: 5.5em;"></i>
+        <h1 style="height:80px;line-height: 80px;" class="title">台灣經濟發展史</h1>
+        <p style="clear: left;font-size: 1.5em;width:fit-content" class="bg-dark mx-auto">The past 70 years
+            development history</p>
+    </header>
+
+    <nav>
+
+        <i class="twicon-cks-hall" style="font-size:3.5em;padding: .2em;"></i>
+        <ul>
+            <div class="layer"></div>
+            <div class="water"></div>
+
+            <li><a href="mainPage.html" target="main">
+                    <div class="text text-center fw-bold"><i class="twicon-balloon"></i>首頁</div>
+                </a></li>
+            <li><a href="agri.html" target="main">
+                    <div class="text text-center fw-bold"><i class="twicon-l-wemo"></i>農業改革</div>
+                </a></li>
+            <li><a href="industry.html" target="main">
+                    <div class="text text-center fw-bold"><i class="twicon-taipei-mrt"></i>工業改革</div>
+                </a></li>
+            <li><a href="eco.html" target="main">
+                    <div class="text text-center fw-bold"><i class="twicon-sky-lantern"></i>經濟起飛</div>
+                </a></li>
+            <li><a href="arthor.html" target="main">
+                    <div class="text text-center fw-bold"><i class="twicon-red-man"></i>關於作者</div>
+                </a></li>
+
+            <!-- </div> -->
+
+        </ul>
+    </nav>
+
+   <iframe src="mainPage.html"
+   frameborder="0"
+   height="750px"
+   width="100%"
+   name="main"
+   ></iframe>
+
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'GDP'],
+                ['2004', 1000],
+                ['2005', 1170],
+                ['2006', 660],
+                ['2007', 1030]
+            ]);
+
+            var options = {
+                title: '台灣經濟 GDP',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+
+</html>

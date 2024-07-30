@@ -1,0 +1,14 @@
+/*
+RWD( Responsive Web Design)
+根據螢幕寬度調整CSS的設定
+
+基本語法: Media Query
+@media(螢幕條件){
+    套用符合的 CSS 設定
+}
+
+eg.
+@media(max-width:1200px){
+    螢幕寬度在 1200px 以下
+}
+*/

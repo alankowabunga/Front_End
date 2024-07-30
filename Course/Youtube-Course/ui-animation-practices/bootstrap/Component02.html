@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Practice</title>
+    <link rel="stylesheet" href="css-index/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <style>
+        .scroll-content {
+            max-height: 15vh;
+            overflow: auto;
+        }
+        /* 可以用 background-image 更改箭頭按鈕 */
+        .carousel-control-next-icon{
+            /* background-image: url(./Images/bao.jpg); */
+            background-size: 220%;
+        }
+        .carousel-control-prev-icon{
+            /* background-image: url(./Images/bao.jpg); */
+            background-size: 220%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box p-3 border-dark bg-dark-subtle m-4">
+        <div class="text fs-3">11. Spinner</div>
+
+        <div class="spinner-border" role="status">
+            <div class="visually-hidden">Loading</div>
+        </div>
+
+        <div class="spinner-border" role="status">
+            <div class="">O</div>
+        </div>
+
+        <button class="btn btn-primary">
+            <span class="spinner-border" role="status"></span>
+        </button>
+
+        <button class="btn btn-warning">
+            <span class="spinner-border" role="status"></span>
+            <p class="d-inline fw-bolder">Loading...</p>
+        </button>
+
+    </div>
+    </div>
+
+    <div class="box p-3 border-dark bg-dark-subtle m-4">
+        <div class="text fs-3">12. toast message</div>
+
+        <button class="btn btn-success" id="show-btn">Show toast message</button>
+
+        <div class="position-fixed z-3 bottom-0 end-0 p-3">
+            <div class="toast border-3 border-danger" id="toast-message">
+                <div class="toast-header">
+                    <strong>Bootstrap</strong>
+                    <small class="m-auto text-end">This is toast-header</small>
+                    <button class="btn-close" type="button" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body bg-warning-subtle text-primary-emphasis">
+                    This is toast-body.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box p-3 border-dark bg-dark-subtle m-4">
+        <div class="text fs-3">13. Scrollspy</div>
+
+        <!-- .navbar屬性搭配 nav 標籤 -->
+        <nav class="navbar bg-light rounded">
+            <div class="container-fluid">
+
+                <!-- 標題 -->
+                <span class="navbar-brand">nav-brand</span>
+
+                <!-- 分頁 -->
+                <ul id="spyId" class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="#title1" class="nav-link active">First</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#title2" class="nav-link">Second</a>
+                    </li>
+                    <!-- 設定為下拉選單 & 按鈕 -->
+                    <li class="nav-item dropdown my-auto border border-warning rounded">Dropdown
+                        <button data-bs-toggle="dropdown" class="dropdown-toggle btn " type="button"></button>
+
+                        <!-- 下拉選單 -->
+                        <ul class="dropdown-menu">
+                            <li><a href="#title3" class="dropdown-item">Third</a></li>
+                            <li><a href="#title4" class="dropdown-item">Fourth</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a href="#title5" class="dropdown-item">Fifth</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- 本文:設定屬性 data-bs-spy="scroll" 、data-bs-target="id-name" -->
+            <div data-bs-spy="scroll" data-bs-target="spyId" class="scroll-content">
+                <h4 id="title1">First Title</h4>
+                <p>界面今年群眾並不過了投入也就是發言邀請輕易，醫院網遊國務院三大權利創業下去畢業生全新把你引發不喜歡信箱，證明模糊基地習慣苗栗最高互相標誌大師死了穩定一項，下載鈴聲手裡請點擊公共精神生日住房我來，建設水果，恢復好了很久威望帶來規劃，考核外貿自行視頻人事，可。
+                </p>
+                <h4 id="title2">Second Title</h4>
+                <p>成功建議，主體北方原則機器不可以氣氛嘿嘿麻煩消費，協議生氣錯誤，科學一大最為，學者加拿大臺中基礎魔獸而是另一個醫療數碼一天，傢俱家長合理治療妻子當初工廠現場熱點招標針對犯罪有限公司，達到執行時間姓名重視你的這時市場，和你朋友，一週股市發佈還能程式已有，意。
+                </p>
+                <h4 id="title3">Third Title</h4>
+                <p>應用隨便態度，我家人數幹什麼促銷，計劃關西精采聯想網絡現有手中司機當地嚴重後來統計零售，熟悉記得一半收藏老人施工單位陽光社會獲取幫我分別心中金屬，清晰畢業生浪費，個性國家真實性味道太陽將來創造很好和平完整求職人體，印刷處於手續傳說回去，包裝漫畫，軍隊顯示。
+                </p>
+                <h4 id="title4">Fourth Title</h4>
+                <p>女士常見不論什麼是時刻起點鑒定當我，也是形勢頻道，光臨高級文件大小超級範圍一樣，起點笑道考試隱藏版查找專門創建，找不到配合升級所以背景黑色，西方居然，圖形利潤綜合痛苦，工商讀書少女沉默處罰手機對著博士環境教程採取，男女高校成果種子，及時鈴聲下載，裡面龍岡。
+                </p>
+                <h4 id="title5">Fifth Title</h4>
+                <p>西方完善百度騎士種子世紀註冊時間一週死亡就要材料第二，社會主義，傷害出現在等等目前聊天曝光還會焦點最初時尚點頭之家從來沒轉載，點這裡論文一次他說，地下網頁無派主人不願，將其銀行是怎麼進步吃螺絲結婚配合住房，作用高雄合理階段給你醫藥工藝加工成熟和平，春天至。
+                </p>
+            </div>
+        </nav>
+    </div>
+
+    <div class="box p-3 border-dark bg-dark-subtle m-4">
+        <div class="text fs-3">14. Carousel</div>
+
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="./Images/Q60.jpg" class="d-block w-100">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="./Images/Q60_interior.jpg" class="d-block w-100">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="./Images/2020-INFINITI-Q60-Red.jpg" class="d-block w-100">
+                </div>
+            </div>
+            
+            <!-- 左右按鈕 -->
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselId" type="button">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselId"><span class="carousel-control-next-icon"></span></button>
+
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselId" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselId" data-bs-slide-to="2"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js-index/bootstrap.bundle.min.js"></script>
+    <script src="./js-index"></script>
+    <script src="./js/jquery-source-code.js"></script>
+    <script>
+        // toast
+        var btn = document.getElementById('show-btn');
+        var message = document.getElementById('toast-message');
+
+        if (btn) {
+
+            btn.addEventListener('click', () => {
+
+                // 建立 bootstrap toast 的物件、並用 show()方法
+                var toast = new bootstrap.Toast(message);
+                toast.show();
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(90deg, rgb(127, 113, 236) 0%, rgb(99, 141, 185) 35%, rgb(162, 231, 250) 78%, rgb(77, 215, 244) 100%);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+header div.logo {
+  display: flex;
+  align-items: center;
+  flex: 5 1 5%;
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+header div.logo .img {
+  height: 15vh;
+  width: 18vw;
+  background-image: url(images/630x355.png);
+  background-size: cover;
+  border-radius: 11% 89% 13% 87%/88% 31% 69% 12%;
+  box-shadow: 0 0 1em rgb(53, 103, 188);
+}
+header div.logo h3 {
+  line-height: 105px;
+  margin-left: 2rem;
+}
+
+nav {
+  line-height: 105px;
+  flex: 2 1 auto;
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  margin: 0px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: rgb(70, 70, 138);
+  font-size: 1.2em;
+  margin: 0.2em;
+}
+
+@media screen and (max-width: 550px) {
+  header div.logo {
+    margin-left: 0.5rem;
+  }
+  header div.logo .img {
+    width: 15;
+    height: 18;
+  }
+}
+main {
+  margin-top: 2em;
+}
+main .filter {
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+main video {
+  position: absolute;
+  width: 100vw;
+  z-index: -1;
+}
+main h2 {
+  color: antiquewhite;
+}
+main button {
+  margin-top: 1em;
+}
+
+.options {
+  width: 100vw;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.options .slider {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  transform-style: preserve-3d;
+  animation: rotate 25s linear infinite;
+}
+.options .slider span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(calc(var(--i) * 72deg)) translateZ(350px);
+}
+.options .slider span img {
+  position: absolute;
+  height: 400px;
+  width: 350px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: perspective(3000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(3000px) rotateY(360deg);
+  }
+}/*# sourceMappingURL=0411hawai.css.map */

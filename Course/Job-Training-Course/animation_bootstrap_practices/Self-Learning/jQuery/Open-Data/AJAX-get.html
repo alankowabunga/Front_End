@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2 class="m-3">課堂練習 $.get</h2>
+    <table id="table" class="table table-info table-striped table-bordered table-hover ">
+        <tr>
+            <th>項目</th>
+            <th>金額</th>
+        </tr>
+    </table>
+
+    <script src="../jquery-source-code.js"></script>
+    <script>
+        // 宣告global 變數 data
+        var data;
+
+        const des = { '第一筆資料': 'rest operator 合併陣列資料' }
+
+        // 獲取當前網頁的網域(這裡用不到)
+        var domain = window.location.hostname;
+        console.log('網域為: ' + domain); //127.0.0.1
+
+
+        // 用get 取得公開資料
+        $.get('https://apiservice.mol.gov.tw/OdService/download/A17030000J-000022-UMA', function (e) {
+
+            // 未整理的整陀 json 資料
+            console.log(e);
+
+            // 用 JSON.parse() 方法整理:
+            data = JSON.parse(e)
+            console.log(data);
+
+            // 第一筆資料
+            const info = { ...des, ...data[0] }
+            console.log(info);
+
+            //將所有項目印出
+            for (var i = 0; i < data.length; i++) {
+                console.log(data[i]);
+            }
+
+            /*要從陣列中取得中文 key 的 value，無法直接使用 data[index].key 的方式。這是因為 JavaScript 的物件屬性名稱必須是有效的識別符號，並且中文字元不符合這個要求。*/
+
+            // 將中文key屬性名稱，放入英文的變數 -> 有效識別符號
+            var subject = "科目";
+            var amount = "預算金額";
+            for (var i = 0; i < data.length; i++) {
+
+                console.log(data[i][subject] + ' => ' + data[i][amount]);
+            }
+
+            for (var i = 0; i < data.length; i++) {
+
+
+                var html = `
+                <tr>
+                    <td>${data[i][subject]}</td>
+                    <td>${data[i][amount]}</td>
+                    </tr>
+                    `;
+                $("#table").append(html);
+            }
+
+        });
+
+
+
+    </script>
+</body>
+
+</html>

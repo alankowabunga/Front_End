@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="5"/> -->
+    <title>Flashy Card</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        body{
+            display:grid;
+            place-items:center;
+            height:100vh;
+            
+            background:#4f6d7a;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .container{
+            display:grid;
+            place-items:center;
+
+            background:linear-gradient(50deg,#2a5a3b,#1e4886);
+            width:255px;
+            height:355px;
+            border-radius:1em;
+
+            overflow:hidden;
+            position:relative;
+        }
+        .container::before{
+            content:"";
+            position:absolute;
+            
+            background:linear-gradient(50deg,#00ff59,#02b3ff);
+            width:460px;
+            height:35px;
+            top:0;
+            right:35px;
+
+            transform:rotate(-45deg) translate(0,-100px);
+            transition:1900ms linear forwards;
+        }
+        .card{
+            display:grid;
+            place-items:center;
+            background:#171614;
+            /* 寬高都比 container 小一點點，留邊做特效 */
+            width:247px;
+            height:347px;
+            border-radius:.8em;
+            color:#858585;
+            padding:1em;
+            text-align:center;
+            cursor:pointer;
+
+            z-index:1;
+            overflow:hidden;
+            transition:1000ms ease; /*文字變色*/
+        }
+        .card:hover{
+            color:#fff;
+        }
+        .container:hover::before{ /*意思為當滑鼠觸發到container時，設定內容會作用在container::before上*/
+            animation:flashy 1900ms;
+        }
+
+        @keyframes flashy{
+            100%{transform:rotate(-45deg) translate(0,450px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Alan Chen</h1>
+            <p>CSS web design</p>
+        </div>
+    </div>
+</body>
+</html>

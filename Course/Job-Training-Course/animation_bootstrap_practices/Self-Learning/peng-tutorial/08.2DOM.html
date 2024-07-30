@@ -1,0 +1,115 @@
+<!-- https://ithelp.ithome.com.tw/articles/10237798 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" width="device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>Javascript: HTML DOM 網頁畫面操作</title>
+    </head>
+    <body>
+        <div>
+            <!-- onclick="函式名稱(); " -->
+            <button onclick="toAbout();">About me</button>
+            <button onclick="toExps();">Experience</button>
+            <button onmouseover="toLike(this);" onmouseout="likeOut(this);" class="like">What I like</button>
+            <button onmouseover="toGoal(this);" onmouseout="goalOut(this);" class="goal">What's my Goal</button>
+        </div>
+        <hr>
+        <div><h2>Click or Hover the buttons above.</h2></div>
+        <div id="about" style="display:none"><h3>Hello I'm Alan</h3></div>
+        <div id="exps" style="display:none"><h3>I was a personal trainer, now a software engineer.</h3></div>
+        <div id="like" style="display:none"><h3>I like workout, money and sex</h3></div>
+        <div id="goal" style="display:none"><h3>My goal is to live a billinae </h3></div>
+
+
+        <script>
+            function toAbout(){
+                let aboutDiv=document.querySelector("#about");
+                let expsDiv=document.querySelector("#exps");
+                let likeDiv=document.querySelector("#goal");
+                let goalDiv=document.querySelector("goal");
+
+                aboutDiv.style.display="block";
+                expsDiv.style.display="none";
+                goalDiv.style.display="none";
+                likeDiv.style.display="none";
+            }
+
+
+            function toExps(){
+                // 先取得操作標籤
+                let aboutDiv=document.querySelector("#about");
+                let expsDiv=document.querySelector("#exps");
+                let likeDiv=document.querySelector("#like");
+                let goalDiv=document.querySelector("#goal");
+
+                // 操作: 要顯示 block ， 隱藏 none
+                aboutDiv.style.display="none";
+                expsDiv.style.display="block";
+                goalDiv.style.display="none";
+                likeDiv.style.display="none";
+            }
+
+
+            // onmouseover=toLike(this)
+            function toLike(elem){ 
+                let likeDiv=document.querySelector("#like");
+                let goalDiv=document.querySelector("#goal");
+                let aboutDiv=document.querySelector("#about");
+                let expsDiv=document.querySelector("#exps");
+
+                aboutDiv.style.display="none";
+                expsDiv.style.display="none";
+                goalDiv.style.display="none";
+                likeDiv.style.display="block";
+                
+                elem.style.backgroundColor=" #ddaaaa";
+            }
+            
+
+            function likeOut(elem){
+                let likeDiv=document.querySelector("#like");
+                let goalDiv=document.querySelector("#goal");
+                let aboutDiv=document.querySelector("#about");
+                let expsDiv=document.querySelector("#exps");
+
+                aboutDiv.style.display="none";
+                expsDiv.style.display="none";
+                goalDiv.style.display="none";
+                likeDiv.style.display="none";
+
+                elem.style.backgroundColor="inherit";
+            }
+
+            function toGoal(elem){
+                let likeDiv=document.querySelector("#like");
+                let goalDiv=document.querySelector("#goal");
+                let aboutDiv=document.querySelector("#about");
+                let expsDiv=document.querySelector("#exps");
+
+                aboutDiv.style.display="none";
+                expsDiv.style.display="none";
+                goalDiv.style.display="block";
+                likeDiv.style.display="none";
+
+                elem.style.backgroundColor="#ffcccc";
+            }
+
+
+            function goalOut(elem){
+                let likeDiv=document.querySelector("#like");
+                let goalDiv=document.querySelector("#goal");
+                let aboutDiv=document.querySelector("#about");
+                let expsDiv=document.querySelector("#exps");
+
+                aboutDiv.style.display="none";
+                expsDiv.style.display="none";
+                goalDiv.style.display="none";
+                likeDiv.style.display="none";
+
+                elem.style.backgroundColor="inherit";
+            }
+
+        </script>
+    </body>
+</html>
